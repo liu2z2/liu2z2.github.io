@@ -4,8 +4,15 @@
 AUTHOR = 'Liu'
 SITENAME = 'Liu (Zuguang Liu)'
 SITEURL = ''
+SITELOGO = './content/images/wiggler-hello.png'
 
+
+# Path settings
 PATH = 'content'
+PAGE_PATHS = ['pages']
+ARTICLE_PATHS = ['articles']
+
+
 
 TIMEZONE = 'US/Eastern'
 
@@ -19,10 +26,9 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Pelican', 'https://getpelican.com/'),
-         ('Python.org', 'https://www.python.org/'),
-         ('Jinja2', 'https://palletsprojects.com/p/jinja/'),
-         ('You can modify those links in your config file', '#'),)
+LINKS = (('Link to old Portfolio', 'https://liu2z2.wixsite.com/liuportfolio'),
+        #  ('You can modify those links in your config file', 'https://get.stick.bugged/'),
+         )
 
 # Social widget
 SOCIAL = (('You can add links in your config file', '#'),

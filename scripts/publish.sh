@@ -1,9 +1,7 @@
 #!/bin/bash
 
-git add .
-git commit -a -m "${1:-Update at $(date +%Y-%m-%dT%H:%M:%S%z)}"
-git push -u origin pelican-src
-pelican content -o output -s pelicanconf.py
+bash scripts/save.sh
+bash scripts/build.sh
 ghp-import output -r origin -b main
 git push origin main
 git checkout pelican-src
