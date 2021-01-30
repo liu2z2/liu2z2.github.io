@@ -4,7 +4,7 @@
 AUTHOR = 'Liu'
 SITENAME = 'Liu (Zuguang Liu)'
 SITEURL = ''
-SITELOGO = './content/images/wiggler-hello.png'
+SITELOGO = 'https://github.com/liu2z2/liu2z2.github.io/blob/pelican-src/content/images/wiggler-hello.png'
 
 
 # Path settings
