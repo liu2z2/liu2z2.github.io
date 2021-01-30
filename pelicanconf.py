@@ -34,4 +34,4 @@ DEFAULT_PAGINATION = 10
 #RELATIVE_URLS = True
 
 # Used Theme
-THEME = "/home/liu/bin/pelican-themes/Flex"
+THEME = "pelican-themes/Flex"
