@@ -15,8 +15,8 @@ PAGE_PATHS = ['pages']
 ARTICLE_PATHS = ['articles']
 STATIC_PATHS = ['images', 
                 'ViewerJS',
-              'extra/robots.txt',
-              ]
+                'extra',
+                ]
 EXTRA_PATH_METADATA = {'images/GitHub-logo.ico':{'path':'favicon.ico'}}
 
 ############################################
@@ -40,19 +40,41 @@ AUTHOR_FEED_RSS = None
 # Plugin settings
 ############################################
 PLUGIN_PATHS = ['plugins']
-PLUGINS = []
+PLUGINS = ['assets','tipue_search']
 
 ############################################
 # Landing page configuration
 ############################################
 LANDING_PAGE_TITLE = "Hello! Welcome to Liu's Portfolio!"
-# PROJECTS = [
-#     {
-#         'name': 'Creating and Maintaining This Website',
-#         'url': 'https://jackdewinter.github.io/categories#website-ref',
-#         'description': 'Notes and articles about the creation and maintenance of this website.'
-#     },
-# ]
+PROJECTS_TITLE = "Read more about"
+PROJECTS = [
+    {
+        'name': 'My Projects',
+        'url': SITEURL+'/tags#projects-ref',
+        'description': 'electronics and programming projects'
+    },
+    {
+        'name': 'GitHub page',
+        'url': 'https://github.com/liu2z2',
+        'description': 'includes my programming projects, documented and undocumented'
+    },
+    {
+        'name': 'Honors ePortfolio (deprecated)',
+        'url': 'https://github.com/liu2z2',
+        'description': 'a portfolio I used for the University Honors Project'
+    },
+]
+
+############################################
+# Footer configuration
+############################################
+SITE_LICENSE = """Content licensed under <a rel="license nofollow noopener noreferrer"
+    href="http://creativecommons.org/licenses/by/4.0/" target="_blank">
+    Creative Commons Attribution 4.0 International License</a>."""
+HOSTED_ON = {
+    "name": "GitHub",
+    "url": "https://github.com/liu2z2/liu2z2.github.io"
+    }
 
 ############################################
 # Content page configuration
@@ -62,7 +84,35 @@ SOCIAL = (
     ("linkedin", "https://www.linkedin.com/in/liu-uc/"),
     ("github", "https://github.com/liu2z2"),
     )
-ARTICLE_URL = '{date:%Y}/{date:%m}/{date:%d}/{slug}/'
-ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
+TAGS_URL = "tags"
+CATEGORIES_URL = "categories"
+ARCHIVES_URL = "archives"
+PAGE_URL = "{slug}"
+PAGE_SAVE_AS = "{slug}.html"
+ARTICLE_URL = 'articles/{date:%Y}{date:%m}{date:%d}-{slug}/'
+ARTICLE_SAVE_AS = 'articles/{date:%Y}{date:%m}{date:%d}-{slug}/index.html'
 DEFAULT_PAGINATION = 10
-PYGMENTS_STYLE = "monokai"
+DEFAULT_METADATA = {
+    'status': 'draft',
+    'author': 'Liu',
+}
+
+############################################
+# Markdown configuration
+############################################
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.extra': {},
+        'markdown.extensions.admonition': {},
+        'markdown.extensions.codehilite': {
+            'css_class': 'highlight'
+        },
+        'markdown.extensions.meta': {},
+        'smarty' : {
+            'smart_angled_quotes' : 'true'
+        },
+        'markdown.extensions.toc': {
+            'permalink': 'true',
+        },
+    }
+}

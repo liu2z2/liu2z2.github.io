@@ -1,7 +1,9 @@
+---
 Title: A Normal Blog Post
 Date: 2021-01-29
-Author: Liu
-
+Status: published
+Tags: projects
+---
 
 # You Thought This is a Blog Post
 
