@@ -46,7 +46,7 @@ PLUGINS = ['assets','tipue_search']
 # Landing page configuration
 ############################################
 LANDING_PAGE_TITLE = "Hello! Welcome to Liu's Portfolio!"
-PROJECTS_TITLE = "Read more about"
+PROJECTS_TITLE = "Read more about ..."
 PROJECTS = [
     {
         'name': 'My Projects',
