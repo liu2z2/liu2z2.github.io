@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Liu" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="UHP, Discussion, " />
+
+<meta property="og:title" content="Developing a Gas Price Tracking and Prediction Application "/>
+<meta property="og:url" content="https://liu2z2.github.io/articles/20200429-developing-a-gas-price-tracking-and-prediction-application" />
+<meta property="og:description" content="Introduction¶ The project is about developing a web application based on data that is related to automobile gas prices. The desired feature of the application is that it collects gas prices at different places every day (specific to stations), recommends the user the cheapest station in the area, reminds the …" />
+<meta property="og:site_name" content="Liu&#39;s Portfolio" />
+<meta property="og:article:author" content="Liu" />
+<meta property="og:article:published_time" content="2020-04-29T00:00:00-04:00" />
+<meta name="twitter:title" content="Developing a Gas Price Tracking and Prediction Application ">
+<meta name="twitter:description" content="Introduction¶ The project is about developing a web application based on data that is related to automobile gas prices. The desired feature of the application is that it collects gas prices at different places every day (specific to stations), recommends the user the cheapest station in the area, reminds the …">
+
+        <title>Developing a Gas Price Tracking and Prediction Application  · Liu&#39;s Portfolio
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://liu2z2.github.io/theme/css/style.min.css?bec7d543">
+
+        <link href="https://liu2z2.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Liu&#39;s Portfolio - Full Atom Feed" />
+
+
+    </head>
+    <body>
+        <div id="content">
+            <div class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="https://liu2z2.github.io/"><span class=site-name>Liu's Portfolio</span></a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right top-menu">
+                                <li >
+                                    <a href=
+                                       https://liu2z2.github.io
+                                    >Home</a>
+                                </li>
+                                <li><a href="https://liu2z2.github.io/pro-exp.html">Professional Experience</a></li>
+                                <li ><a href="https://liu2z2.github.io/categories">Posts</a></li>
+                                <li ><a href="https://liu2z2.github.io/tags">Tags</a></li>
+                                <li ><a href="https://liu2z2.github.io/archives">Archives</a></li>
+                                <li><form class="navbar-search" action="https://liu2z2.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span1"></div>
+                    <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+        <h1>
+            <a href="https://liu2z2.github.io/articles/20200429-developing-a-gas-price-tracking-and-prediction-application">
+                Developing a Gas Price Tracking and Prediction Application
+            </a>
+        </h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div class="toc">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#procedure">Procedure</a></li>
+<li><a href="#results">Results</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+</div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
+            
+            
+<h3 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h3>
+<p>The project is about developing a web application based on data that is related to automobile gas prices. The desired feature of the application is that it collects gas prices at different places every day (specific to stations), recommends the user the cheapest station in the area, reminds the user of an increasing/decreasing trend of the price, and generates a report of gas prices that is helpful to economic analysis. It falls under creativity competency because by the time the project was proposed, there has not been similar tools for this specific application, so it could be hard to decide on how to implement this idea. </p>
+<p>This experience will let me know the process of developing an application skill-wise, during which I would utilize my programming, math and engineering skills to achieve the end goal of the project.</p>
+<p>On one hand, the app will help people save money on their commuting travel. On the other hand, the data I collected would be a useful resource to understand oil-related economy, realize potential problems and possibly propose a solution applicable to the original idea of the project.</p>
+<h3 id="procedure">Procedure<a class="headerlink" href="#procedure" title="Permanent link">¶</a></h3>
+<p>I divided the project into a few phases. 1) Setting up the environment and base code; 2) building the database by updating on daily basis; 3) developing a method for data statistics; and 4) developing the application. </p>
+<p>The first phase took longer than expected because I needed to pick up SQL database, which I did not have too much experience working with before. In addition, I also had to make sure everything is set up well so that the data collected later is comprehensive but easy to manage. Afterwards, at the end of October 2019, the code was put in a computer programmed to run once per day (phase two).</p>
+<p>During the data collecting process, several issues occurred due to hardware and software, making it inconsistent at a few time stamps, but luckily, they got fixed quickly so the overall data trend was not interrupted. After a few months, the database was found large enough for statistical analysis, so the third phase started after 2019’s Christmas.</p>
+<p>The development of this part was also time consuming, as I was trying different statistical tools while also learning database merging methods in order for the source files to look professionally organized. Unfortunately, right after I finished my research and decided a way to implement (at the end of February 2020), COVID-19 hit the country hard. During the time I struggled to adapt to working-from-home environment, I decided to close the project as it is considering two reasons. Firstly, I wanted to prioritize finishing my classes and research until the end of the semester; and secondly, the gas market may have been affected by the pandemic, which is an significantly influential variable that may complicate the case study. Therefore, at the end of the Spring semester 2020, I briefly implemented data visualization by plotting the data per city, and concluded the project.</p>
+<p>The technical aspect of the project will be explained in the <a href="https://liu2z2.github.io/tags#project-ref">project</a> category while this reflection mainly focused on the overall execution and the learning experience. </p>
+<h3 id="results">Results<a class="headerlink" href="#results" title="Permanent link">¶</a></h3>
+<p>Some examples of the visualized data as of the closing phase of the project are shown in Figures 1, 2 and 3. Plotted in different colors, the mean prices of three gas grades are connected together with respect to time, where there are vertical grey bars whose upper and lower bounds illustrate the max and min price number. Then the three curves are put together in the same plot. </p>
+<p><img src="/images/discuss-gastrack/Lexington.webp" width="30%"/>
+<img src="/images/discuss-gastrack/Cincinnati.webp" width="30%"/>
+<img src="/images/discuss-gastrack/Columbus.webp" width="30%"/></p>
+<p>Comparing and contrasting the plots result in a few interesting findings:</p>
+<ol>
+<li>Fluctuations of the prices in three gas grades share similar patterns.</li>
+<li>Prices in neighbored areas may increase/decrease at similar time, but the amount may vary.</li>
+<li>Regarding a specific gas grade in one area, lowest price point changes in a similar manner as the mean price, but the max price point is quite stationary.</li>
+</ol>
+<h3 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">¶</a></h3>
+<p>Though the end goal of the project was not achieved before closing, the method of web crawling and data mining was proven viable for the intended application, and I believe it can lead to a promising direction if more effort and time are given. Better project management could have been used to improve the productivity, but there are still proud parts in the execution, such as breaking the process down into several phases. </p>
+<p>In addition, if the project is ever to be continued, there are a few recommendations for improvement.</p>
+<ol>
+<li>
+<p>There are a few interruptions in the data collecting phase for various reasons. For example, the program crashed because of unexpected errors. Incidents like this can be avoided by considering more edge cases when writing the code.</p>
+</li>
+<li>
+<p>The data was obtained by web scraping gasbuddy.com, which is a website where anyone can upload data. This source can be inaccurate and unreliable sometimes. Better sources can be used to improve this.</p>
+</li>
+<li>
+<p>There must have been more statistical tools that can be used for analysis. More exhaustive research on them could offer more information about the data.</p>
+</li>
+<li>
+<p>In order to make prediction, apart from a larger amount of dataset and a well-modeled algorithm, a good understanding of economics can be important. Generalizing patterns as discussed in the results section is important, but an educated guess may also come from an existing the economic model.</p>
+</li>
+</ol>
+<p>As a learning experience, this project enhances my software programming skills, which I don’t usually learn from my EE curriculum. This was also my first time using SQL database, which I found is a useful tool with a steep learning curve. Finally, as of the closing phase, I came to realize that I did not know enough statistical and economical tools to understand the data comprehensively, and therefore I became interested and motivated to learn them along my study.</p>
+
+
+             
+ 
+            
+            
+            
+
+
+
+
+
+
+            <hr/>
+            <aside>
+            <nav>
+            <ul class="articles-timeline">
+                <li class="previous-article">« <a href="https://liu2z2.github.io/articles/20191202-a-chiptune-music-system-with-opl2-and-reality-adlib-tracker" title="Previous: A Chiptune Music System with OPL2 and Reality Adlib Tracker">A Chiptune Music System with OPL2 and Reality Adlib Tracker</a></li>
+                <li class="next-article"><a href="https://liu2z2.github.io/articles/20200617-artneuroscience-combined-honors-seminar-reflection" title="Next: Art/Neuroscience Combined Honors Seminar Reflection">Art/Neuroscience Combined Honors Seminar Reflection</a> »</li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section id="article-sidebar" class="span2">
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2020-04-29T00:00:00-04:00">Apr 29, 2020</time>
+            <h4>Category</h4>
+            <a class="category-link" href="https://liu2z2.github.io/categories#discussion-ref">Discussion</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="https://liu2z2.github.io/tags#uhp-ref">UHP
+                    <span>7</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+<div id="sidebar-social-link">
+    <a href="mailto:liu2z2@mail.uc.edu" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Mail" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#328cff"/><path d="m250 186c-46 0-69 35-69 74 0 44 29 72 68 72 43 0 73-32 73-75 0-44-34-71-72-71zm-1-37c30 0 57 13 77 33 0-22 35-22 35 1v150c-1 10 10 16 16 9 25-25 54-128-14-187-64-56-149-47-195-15-48 33-79 107-49 175 33 76 126 99 182 76 28-12 41 26 12 39-45 19-168 17-225-82-38-68-36-185 67-248 78-46 182-33 244 32 66 69 62 197-2 246-28 23-71 1-71-32v-11c-20 20-47 32-77 32-57 0-108-51-108-108 0-58 51-110 108-110" fill="#fff"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/liu-uc/" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn" role="img" viewBox="0 0 512 512" fill="#fff"><rect width="512" height="512" rx="15%" fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+    </a>
+    <a href="https://github.com/liu2z2" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+    </a>
+</div>
+            
+
+
+
+
+
+            
+
+
+
+
+
+        </section>
+</div>
+</article>
+                    </div>
+                    <div class="span1"></div>
+                </div>
+            </div>
+        </div>
+<footer>
+    <div>
+        Content licensed under <a rel="license nofollow noopener noreferrer"
+    href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank">
+    The GNU General Public License v3.0</a>.
+    </div>
+
+
+
+
+    <div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" title="Pelican Home Page" target="_blank" rel="nofollow noopener noreferrer">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" title="Theme Elegant Home Page" target="_blank" rel="nofollow noopener noreferrer">Elegant</a>
+        Hosted on:
+        <a href=https://github.com/liu2z2/liu2z2.github.io target="_blank" rel="nofollow noopener noreferrer">
+            GitHub
+        </a>
+    </div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    <script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+
+    </body>
+    <!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>

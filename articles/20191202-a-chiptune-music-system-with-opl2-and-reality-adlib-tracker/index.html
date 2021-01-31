@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Liu" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="project, Projects, " />
+
+<meta property="og:title" content="A Chiptune Music System with OPL2 and Reality Adlib Tracker "/>
+<meta property="og:url" content="https://liu2z2.github.io/articles/20191202-a-chiptune-music-system-with-opl2-and-reality-adlib-tracker" />
+<meta property="og:description" content="The source of the project can be found here. The objective of the project is to build a system with the old-school electronic components that plays Chiptune music, as well as composing the music with compatible software. This is a project for the class Japanese Music Online during Fall 2019 …" />
+<meta property="og:site_name" content="Liu&#39;s Portfolio" />
+<meta property="og:article:author" content="Liu" />
+<meta property="og:article:published_time" content="2019-12-02T00:00:00-05:00" />
+<meta name="twitter:title" content="A Chiptune Music System with OPL2 and Reality Adlib Tracker ">
+<meta name="twitter:description" content="The source of the project can be found here. The objective of the project is to build a system with the old-school electronic components that plays Chiptune music, as well as composing the music with compatible software. This is a project for the class Japanese Music Online during Fall 2019 …">
+
+        <title>A Chiptune Music System with OPL2 and Reality Adlib Tracker  · Liu&#39;s Portfolio
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://liu2z2.github.io/theme/css/style.min.css?bec7d543">
+
+        <link href="https://liu2z2.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Liu&#39;s Portfolio - Full Atom Feed" />
+
+
+    </head>
+    <body>
+        <div id="content">
+            <div class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="https://liu2z2.github.io/"><span class=site-name>Liu's Portfolio</span></a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right top-menu">
+                                <li >
+                                    <a href=
+                                       https://liu2z2.github.io
+                                    >Home</a>
+                                </li>
+                                <li><a href="https://liu2z2.github.io/pro-exp.html">Professional Experience</a></li>
+                                <li ><a href="https://liu2z2.github.io/categories">Posts</a></li>
+                                <li ><a href="https://liu2z2.github.io/tags">Tags</a></li>
+                                <li ><a href="https://liu2z2.github.io/archives">Archives</a></li>
+                                <li><form class="navbar-search" action="https://liu2z2.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span1"></div>
+                    <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+        <h1>
+            <a href="https://liu2z2.github.io/articles/20191202-a-chiptune-music-system-with-opl2-and-reality-adlib-tracker">
+                A Chiptune Music System with OPL2 and Reality Adlib Tracker
+            </a>
+        </h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div class="toc">
+<ul>
+<li><a href="#how-chiptune-music-works">How Chiptune Music Works</a><ul>
+<li><a href="#beeper-speakers">Beeper Speakers</a></li>
+<li><a href="#fm-synthesizer">FM Synthesizer</a></li>
+<li><a href="#nintendo-entertainment-system-nes">Nintendo Entertainment System (NES)</a></li>
+<li><a href="#commodore-64">Commodore 64</a></li>
+<li><a href="#adlibsound-blaster-card">Adlib/Sound-Blaster Card</a></li>
+</ul>
+</li>
+<li><a href="#hardware-setup">Hardware Setup</a></li>
+<li><a href="#software">Software</a></li>
+<li><a href="#result-demonstration">Result Demonstration</a></li>
+<li><a href="#summary-and-recommendation">Summary and Recommendation</a></li>
+</ul>
+</div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
+            
+            
+<p>The source of the project can be found <a href="https://github.com/liu2z2/Chiptune">here</a>.</p>
+<p>The objective of the project is to build a system with the old-school electronic components that plays Chiptune music, as well as composing the music with compatible software. This is a project for the class Japanese Music Online during Fall 2019 semester.  Dr. Kazuaki Shiota was really nice to let me do this for the final project of the class. The project helped me understand the theory behind Chiptune Music from a musical and engineering standpoint. </p>
+<h3 id="how-chiptune-music-works">How Chiptune Music Works<a class="headerlink" href="#how-chiptune-music-works" title="Permanent link">¶</a></h3>
+<h4 id="beeper-speakers">Beeper Speakers<a class="headerlink" href="#beeper-speakers" title="Permanent link">¶</a></h4>
+<p>In embedded systems, I have experimented generating music made by square-waves with a piezoelectric speaker. The tone of the music is adjusted by the frequency of the square waves, as a method called “Frequency Modulation (FM)”. Such “beeper speaker” system is how early home computers generate sounds, except the CPU also handles other processes as a normal PC does (Figure 1). Different tones can be played by varying the frequency of the square waves, however, it requires all of the CPU’s run-time to implement advanced sound of music. </p>
+<h4 id="fm-synthesizer">FM Synthesizer<a class="headerlink" href="#fm-synthesizer" title="Permanent link">¶</a></h4>
+<p>To solve this issue, computers in the early 1980’s use dedicated sound chip (Figure 2), which is the early form of the sound cards in today’s computers. Except for taking the processing load away from the CPU, this method also creates possibility to develop more advanced sound generation and even synthesis. Three examples can be examined as examples.</p>
+<figure>
+<img src="/images/project-chiptune/fm-synth.png"/>
+<figcaption> <small> Figure 1 (Left) - Non-Dedicated Sound Chip; Figure 2 (Right) - Dedicated Sound Chip </small> </figcaption>
+</figure>
+<h4 id="nintendo-entertainment-system-nes">Nintendo Entertainment System (NES)<a class="headerlink" href="#nintendo-entertainment-system-nes" title="Permanent link">¶</a></h4>
+<p>The sound chip in NES is able to generate five channels, each of which features different types of waveforms (Figure 3). Channel #1 and #2 gives square waves, Channel #3 gives triangle waves, Channel #4 gives noise and Channel #5 is PCM sample, which modulate pre-recorded sound waves. Though the tone can be different, this method makes the music sounds like being played by the same set of instruments. </p>
+<figure>
+<img src="/images/project-chiptune/NES.png"/>
+<figcaption> <small> Figure 3 - NES Sound Chip </small> </figcaption>
+</figure>
+<h4 id="commodore-64">Commodore 64<a class="headerlink" href="#commodore-64" title="Permanent link">¶</a></h4>
+<p>Commodore uses a different approach to synthesize music. The chip has 3 channels, each of which can produce waveforms among square, triangle and sawtooth wave (Figure 4) . Initially, engineers assign used to assign one waveform to a channel and write the tone associated with the wave. This seems inferior to the NES system as it only has 3 channels, despite that the combination of the waveforms can be variable. However, later engineers realized that waveform can be reassigned to channels on the fly, which has opened a great amount of variability to the music. This methods have been proved successful and extended to the next generation of sound card in PC. </p>
+<figure>
+<img src="/images/project-chiptune/C64.png"/>
+<figcaption> <small> Figure 4 - Commodore 64 Sound Chip </small> </figcaption>
+</figure>
+<h4 id="adlibsound-blaster-card">Adlib/Sound-Blaster Card<a class="headerlink" href="#adlibsound-blaster-card" title="Permanent link">¶</a></h4>
+<p>As an improved version of the Commodor 64 sound chip, the Adlib Sound Card is used in the later IBM PC. The Card is replaced with Sound Blaster later due to the market loss,  but the key component - YM3812 FM Operator chip is used in both boards. This chip is considered the foundation of computer music on IBM PC for a decade, and can even found in some Yamaha electronic piano keyboards. </p>
+<p><strong>YM3812</strong> is an Frequency Modulation Operator Type-L2 (OPL2) integrated chip that can simultaneously generate 9 channels of different types of waveforms. Since this chip was widely used in early computer systems, there are still supporting documents, software, and projects related to it, so it has been determined as the core of this project as well. </p>
+<h3 id="hardware-setup">Hardware Setup<a class="headerlink" href="#hardware-setup" title="Permanent link">¶</a></h3>
+<p>Figure 5 is the hardware setup of the system in block diagram. The music file stored in the SD card is read by the microcontroller (μC). The OPL2 chip uses 4-line bus for control signal and 8-line bus for data transfer. To reduce the load on the microcontroller, the data is sent in serial first to a shift register, and then transmitted to the OPL2 chip after the conversion. The digital output of the FM operation is thereafter transferred to a DAC, whose analog output is amplified to become the eventual sound that can be played by a speaker. </p>
+<figure>
+<img src="/images/project-chiptune/block.png"/>
+<figcaption> <small> Figure 5 - Block Diagram </small> </figcaption>
+</figure>
+<p>The detailed schematic of the system is in Figure 9. It is made in KiCAD, a free CAD software for PCB design. In order to reduce the cross-talk and noise of the system, it was decided to make the system into a PCB. After a few hours’ layout design, the final version of the board (Figure 10) is submitted to OSH Park Proto-PCB Service. </p>
+<p>The KiCAD files are available in the GitHub repository attached at the begining of the post. </p>
+<figure>
+<img src="/images/project-chiptune/schematic.png"/>
+<figcaption> <small> Figure 6 - Circuit Schematic </small> </figcaption>
+</figure>
+<figure>
+<img src="/images/project-chiptune/pcb.png"/>
+<figcaption> <small> Figure 7 - PCB Demo </small> </figcaption>
+</figure>
+<h3 id="software">Software<a class="headerlink" href="#software" title="Permanent link">¶</a></h3>
+<p>The software portion of the project consists of the controlling program on the microcontroller and the music composing software. </p>
+<p>Since the microcontroller is determined to be Arduino Uno as it’s the most available option, the controlling program is written in C++ in Arduino IDE. In addition to an external OPL2 library that handles the communication protocol, libraries such as SD and SPI are included too for the SD module board. The Arduino code is available in the GitHub repository attached at the end of the post. </p>
+<p>Reality Adlib Tacker II (Figure 11) is the software for me to compose the music. It is a music tracker with an old-school GUI but an extensive documentation. </p>
+<figure>
+<img src="/images/project-chiptune/reality.png"/>
+<figcaption> <small> Figure 8 - Reality Adlib Tracker </small> </figcaption>
+</figure>
+<h3 id="result-demonstration">Result Demonstration<a class="headerlink" href="#result-demonstration" title="Permanent link">¶</a></h3>
+<p>Before the PCB design is manufactured, an alpha prototype is made on a breadboard, in order to test the functionality of the design. The video below demonstrates the alpha system playing a sample test music.</p>
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/rFG_2tbkUiI" width="560"></iframe>
+<p>Knowing that the design is functional, the next phase was a hardware and software upgrade. Hardware-wise, the PCB was sent to the manufacturer and assembled later. Software-wise, a specific piece of music was chosen to be recreated with the Tracker by myself. The video below is the final version of the system, playing Megalovania from the game Undertale.</p>
+<h3 id="summary-and-recommendation">Summary and Recommendation<a class="headerlink" href="#summary-and-recommendation" title="Permanent link">¶</a></h3>
+<p>To me, this multi-disciplinary project was not only successful but also meaningful. </p>
+<p>In a music standpoint, I learned how early electronic/computer music works and experienced the same method of composing it as the early 1900s game designed did. I am amazed too by the ingenuity of them making a variety of music with such limited system. Luckily, chiptune (or 8-bit) music remains as a featured style of music nowadays, which, to some extent, pays a tribute to those who used to work on electronic music composition. </p>
+<p>In an electrical engineering standpoint, this is a thorough embedded system engineering project starting from an idea, to research, design, assembly, testing and eventually realization. A lot of effort was used in designing the circuit, which is one of reasons of deciding to make a PCB. I also gained experience in audio engineering, such as signal amplification and reducing noise. </p>
+<p>Finally, some recommendations are listed for future improvement.</p>
+<ol>
+<li>Instead of using Arduino Uno board, the system can be simpler by integrating Teensy board into the PCB. Thus, the system will become an actual sound card. </li>
+<li>The OPL2 library was used, but not fully understood yet. Reading through the code may help understanding the theories of operation even more.</li>
+<li>The process of loading the sound file in the SD card is time-consuming. It can be improved by developing a direct interface with PC and the system. </li>
+</ol>
+
+
+             
+ 
+            
+            
+            
+
+
+
+
+
+
+            <hr/>
+            <aside>
+            <nav>
+            <ul class="articles-timeline">
+                <li class="previous-article">« <a href="https://liu2z2.github.io/articles/20191021-mathematical-steady-state-analysis-by-plotting-in-python" title="Previous: Mathematical Steady State Analysis by Plotting in Python">Mathematical Steady State Analysis by Plotting in Python</a></li>
+                <li class="next-article"><a href="https://liu2z2.github.io/articles/20200429-developing-a-gas-price-tracking-and-prediction-application" title="Next: Developing a Gas Price Tracking and Prediction Application">Developing a Gas Price Tracking and Prediction Application</a> »</li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section id="article-sidebar" class="span2">
+    <h4>Reading Time</h4>
+    <p>~5 min read</p>
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2019-12-02T00:00:00-05:00">Dec 2, 2019</time>
+            <h4>Category</h4>
+            <a class="category-link" href="https://liu2z2.github.io/categories#projects-ref">Projects</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="https://liu2z2.github.io/tags#project-ref">project
+                    <span>3</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+<div id="sidebar-social-link">
+    <a href="mailto:liu2z2@mail.uc.edu" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Mail" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#328cff"/><path d="m250 186c-46 0-69 35-69 74 0 44 29 72 68 72 43 0 73-32 73-75 0-44-34-71-72-71zm-1-37c30 0 57 13 77 33 0-22 35-22 35 1v150c-1 10 10 16 16 9 25-25 54-128-14-187-64-56-149-47-195-15-48 33-79 107-49 175 33 76 126 99 182 76 28-12 41 26 12 39-45 19-168 17-225-82-38-68-36-185 67-248 78-46 182-33 244 32 66 69 62 197-2 246-28 23-71 1-71-32v-11c-20 20-47 32-77 32-57 0-108-51-108-108 0-58 51-110 108-110" fill="#fff"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/liu-uc/" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn" role="img" viewBox="0 0 512 512" fill="#fff"><rect width="512" height="512" rx="15%" fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+    </a>
+    <a href="https://github.com/liu2z2" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+    </a>
+</div>
+            
+
+
+
+
+
+            
+
+
+
+
+
+        </section>
+</div>
+</article>
+                    </div>
+                    <div class="span1"></div>
+                </div>
+            </div>
+        </div>
+<footer>
+    <div>
+        Content licensed under <a rel="license nofollow noopener noreferrer"
+    href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank">
+    The GNU General Public License v3.0</a>.
+    </div>
+
+
+
+
+    <div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" title="Pelican Home Page" target="_blank" rel="nofollow noopener noreferrer">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" title="Theme Elegant Home Page" target="_blank" rel="nofollow noopener noreferrer">Elegant</a>
+        Hosted on:
+        <a href=https://github.com/liu2z2/liu2z2.github.io target="_blank" rel="nofollow noopener noreferrer">
+            GitHub
+        </a>
+    </div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    <script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+
+    </body>
+    <!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>
