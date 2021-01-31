@@ -3,7 +3,7 @@
 import datetime
 
 AUTHOR = 'Liu'
-SITENAME = "Liu's Portfolio"
+SITENAME = "Liu's ePortfolio"
 SITEURL = "http://localhost:8000"
 REAL_SITEURL = "https://liu2z2.github.io"
 
@@ -46,7 +46,7 @@ PLUGINS = ['assets','tipue_search','post_stats','neighbors','extract_toc','rende
 ############################################
 # Landing page configuration
 ############################################
-LANDING_PAGE_TITLE = "Hello! Welcome to Liu's Portfolio!"
+LANDING_PAGE_TITLE = "Hello! Welcome to Liu's ePortfolio!"
 PROJECTS_TITLE = "Read more about ..."
 PROJECTS = [
     {
