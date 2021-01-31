@@ -1,4 +1,5 @@
 #!/bin/bash
+# Rebuild, commit and push
 
 bash scripts/save.sh "${1:-Update at $(date +%Y-%m-%dT%H:%M:%S%z)}"
 bash scripts/build.sh
