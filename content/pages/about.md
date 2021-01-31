@@ -32,4 +32,4 @@ University of Cincinnati <br/><br/>
 
 <iframe src = "ViewerJS/#../extra/resume.pdf" height='600' allowfullscreen webkitallowfullscreen style="width:100%;"></iframe>
 
-
+<br/>
