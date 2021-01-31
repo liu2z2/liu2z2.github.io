@@ -60,7 +60,7 @@ PROJECTS = [
     },
     {
         'name': 'Honors ePortfolio (deprecated)',
-        'url': 'https://github.com/liu2z2',
+        'url': 'https://liu2z2.wixsite.com/liuportfolio',
         'description': 'a portfolio I used for the University Honors Project'
     },
 ]
