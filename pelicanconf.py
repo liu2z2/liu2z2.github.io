@@ -5,6 +5,7 @@ import datetime
 AUTHOR = 'Liu'
 SITENAME = "Liu's Portfolio"
 SITEURL = "http://localhost:8000"
+REAL_SITEURL = "https://liu2z2.github.io"
 
 ############################################
 # Path settings
@@ -50,7 +51,7 @@ PROJECTS_TITLE = "Read more about ..."
 PROJECTS = [
     {
         'name': 'My Projects',
-        'url': SITEURL+'/tags#projects-ref',
+        'url': REAL_SITEURL+'/tags#projects-ref',
         'description': 'electronics and programming projects'
     },
     {
