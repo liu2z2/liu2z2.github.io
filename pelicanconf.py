@@ -41,7 +41,7 @@ AUTHOR_FEED_RSS = None
 # Plugin settings
 ############################################
 PLUGIN_PATHS = ['plugins']
-PLUGINS = ['assets','tipue_search']
+PLUGINS = ['assets','tipue_search','post_stats','neighbors','extract_toc','render_math']
 
 ############################################
 # Landing page configuration
@@ -51,7 +51,7 @@ PROJECTS_TITLE = "Read more about ..."
 PROJECTS = [
     {
         'name': 'My Projects',
-        'url': REAL_SITEURL+'/tags#projects-ref',
+        'url': REAL_SITEURL+'/tags#project-ref',
         'description': 'electronics and programming projects'
     },
     {
@@ -65,13 +65,14 @@ PROJECTS = [
         'description': 'a portfolio I used for the University Honors Project'
     },
 ]
+RECENT_ARTICLES_COUNT = 3
 
 ############################################
 # Footer configuration
 ############################################
 SITE_LICENSE = """Content licensed under <a rel="license nofollow noopener noreferrer"
-    href="http://creativecommons.org/licenses/by/4.0/" target="_blank">
-    Creative Commons Attribution 4.0 International License</a>."""
+    href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank">
+    The GNU General Public License v3.0</a>."""
 HOSTED_ON = {
     "name": "GitHub",
     "url": "https://github.com/liu2z2/liu2z2.github.io"
@@ -88,9 +89,9 @@ SOCIAL = (
 TAGS_URL = "tags"
 CATEGORIES_URL = "categories"
 ARCHIVES_URL = "archives"
-PAGE_URL = "{slug}"
+PAGE_URL = "pages/{slug}"
 PAGE_SAVE_AS = "{slug}.html"
-ARTICLE_URL = 'articles/{date:%Y}{date:%m}{date:%d}-{slug}/'
+ARTICLE_URL = 'articles/{date:%Y}{date:%m}{date:%d}-{slug}'
 ARTICLE_SAVE_AS = 'articles/{date:%Y}{date:%m}{date:%d}-{slug}/index.html'
 DEFAULT_PAGINATION = 10
 DEFAULT_METADATA = {

@@ -4,7 +4,7 @@ Slug: pro-exp
 Status: hidden
 ---
 <p style= "float:right; padding: 0px 0px 0px 50px;" >
-<img src="images/pro-exp/bci.webp" width=200>
+<img src="/images/pro-exp/bci.webp" width=200>
 </p>
 
 ##### Brain Computer Interface Research Lab at UC <br/><small>(Fall 2019 - Now)</small>
@@ -16,11 +16,11 @@ Status: hidden
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 <p style= "float:right; padding: 0px 0px 0px 50px;" >
-<img src="images/pro-exp/ethicon-site.webp"  width=200>
+<img src="/images/pro-exp/ethicon-site.webp"  width=200>
 <br clear="all" /><br clear="all" /><br clear="all" /><br clear="all" /><br clear="all" /><br clear="all" />
-<img src="images/pro-exp/ethicon-pcb.webp" width=200>
+<img src="/images/pro-exp/ethicon-pcb.webp" width=200>
 <br clear="all" /><br clear="all" /><br clear="all" /><br clear="all" /><br clear="all" /><br clear="all" />
-<img src="images/pro-exp/ethicon-pic.webp" width=200>
+<img src="/images/pro-exp/ethicon-pic.webp" width=200>
 </p>
 
 ##### R&D Electrical Engineer Co-op at Ethicon <br/><small>(Summer 2019)</small>

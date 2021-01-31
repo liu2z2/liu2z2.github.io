@@ -4,7 +4,7 @@ Slug: landing-page-about-hidden
 Status: hidden
 ---
 
-<img align="right" src="images/about/pro-shot.JPG" width="250">
+<img align="right" src="/images/about/pro-shot.JPG" width="250">
 
 **Zuguang Liu (or simply Liu)** 
 
@@ -30,6 +30,6 @@ University of Cincinnati <br/><br/>
     </a>
 </div>
 
-<iframe src = "ViewerJS/#../extra/resume.pdf" height='600' allowfullscreen webkitallowfullscreen style="width:100%;"></iframe>
+<iframe src = "/ViewerJS/#../extra/resume.pdf" height='600' allowfullscreen webkitallowfullscreen style="width:100%;"></iframe>
 
 <br/>
