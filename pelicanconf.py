@@ -18,7 +18,8 @@ STATIC_PATHS = ['images',
                 'ViewerJS',
                 'extra',
                 ]
-EXTRA_PATH_METADATA = {'images/GitHub-logo.ico':{'path':'favicon.ico'}}
+EXTRA_PATH_METADATA = {'images/GitHub-logo.ico': {'path':'favicon.ico'},
+                       'extra/robots.txt': {'path':'robots.txt'}}
 
 ############################################
 # Basic settings
@@ -41,7 +42,33 @@ AUTHOR_FEED_RSS = None
 # Plugin settings
 ############################################
 PLUGIN_PATHS = ['plugins']
-PLUGINS = ['assets','tipue_search','post_stats','neighbors','extract_toc','render_math']
+PLUGINS = ['assets', # https://github.com/getpelican/pelican-plugins/tree/master/assets
+           'tipue_search',  # https://github.com/getpelican/pelican-plugins/tree/master/tipue_search
+           'post_stats', # https://github.com/getpelican/pelican-plugins/tree/master/post_stats
+           'neighbors', # https://github.com/getpelican/pelican-plugins/tree/master/neighbors
+           'extract_toc', # https://github.com/getpelican/pelican-plugins/tree/master/extract_toc
+           'render_math', # https://github.com/getpelican/pelican-plugins/tree/master/render_math
+           'sitemap', # https://github.com/getpelican/pelican-plugins/tree/master/sitemap
+           ]
+UTTERANCES_REPO = "liu2z2/liu2z2.github.io"
+UTTERANCES_LABEL = "Comments"
+UTTERANCES_FILTER = False
+UTTERANCES_THEME = "github-light"
+SITEMAP = {
+    'format': 'xml',
+    'priorities': {
+        'articles': 0.6,
+        'indexes': 0.5,
+        'pages': 0.4
+    },
+    'changefreqs': {
+        'articles': 'weekly',
+        'indexes': 'weekly',
+        'pages': 'monthly'
+    }
+}
+GOOGLE_ANALYTICS = u'G-04WEG366KJ'
+CLAIM_GOOGLE = u'iXlxw5kesqJmrOLBmyqGUYw3nZkBW2GBcnfuIni_910'
 
 ############################################
 # Landing page configuration
