@@ -98,8 +98,8 @@ RECENT_ARTICLES_COUNT = 3
 # Footer configuration
 ############################################
 SITE_LICENSE = """Content licensed under <a rel="license nofollow noopener noreferrer"
-    href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank">
-    The GNU General Public License v3.0</a>."""
+    href="https://www.gnu.org/licenses/agpl-3.0.en.html" target="_blank">
+    GNU Affero General Public License</a>."""
 HOSTED_ON = {
     "name": "GitHub",
     "url": "https://github.com/liu2z2/liu2z2.github.io"
