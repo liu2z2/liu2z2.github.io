@@ -67,8 +67,10 @@ SITEMAP = {
         'pages': 'monthly'
     }
 }
-GOOGLE_ANALYTICS = u'G-04WEG366KJ'
 CLAIM_GOOGLE = u'iXlxw5kesqJmrOLBmyqGUYw3nZkBW2GBcnfuIni_910'
+STAT_COUNTER_PROJECT = 12472197
+STAT_COUNTER_SECURITY = u'98c4a201'
+
 
 ############################################
 # Landing page configuration
