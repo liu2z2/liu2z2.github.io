@@ -21,8 +21,7 @@ Status: hidden
 
 <img src="/images/about/pro-shot.JPG" width=40% style="float:right;">
 
-
-Electrical Engineering <br/><br/>
+Electrical Engineering <br/>
 Bachelor of Science (May 2021) <br/>
 Master of Science (May 2022) <br/><br/>
 University of Cincinnati, USA <br/>
