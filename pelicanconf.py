@@ -81,12 +81,12 @@ PROJECTS = [
     {
         'name': 'My Projects',
         'url': REAL_SITEURL+'/tags#project-ref',
-        'description': 'electronics and programming projects'
+        'description': 'in electronics and programming'
     },
     {
         'name': 'GitHub page',
         'url': 'https://github.com/liu2z2',
-        'description': 'includes my programming projects, documented and undocumented'
+        'description': 'including my programming projects, documented and undocumented'
     },
     {
         'name': 'Honors ePortfolio (deprecated)',

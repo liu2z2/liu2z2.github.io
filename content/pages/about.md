@@ -3,22 +3,7 @@ Title: About me
 Slug: landing-page-about-hidden
 Status: hidden
 ---
-
-<img align="right" src="/images/about/pro-shot.JPG" width="250">
-
-**Zuguang Liu (or simply Liu)** 
-
-
-Electrical Engineering <br/>
-Bachelor of Science (May 2021) <br/>
-Master of Science (May 2022) <br/><br/>
-University of Cincinnati <br/><br/>
-
-
-​I am a multi-cultural learner who likes to apply my knowledge to incoming challenges. UC offers me a great opportunity with an outstanding EE curriculum and Co-op program.
-
-
-<div id="sidebar-social-link" style="display: flex; justify-content: flex-end">
+<div id="sidebar-social-link" style="float:right;">
     <a href="mailto:liu2z2@mail.uc.edu" title="Email" target="_blank" rel="nofollow noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" aria-label="Mail" role="img" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><rect width="512" height="512" rx="15%" fill="#328cff"/><path d="m250 186c-46 0-69 35-69 74 0 44 29 72 68 72 43 0 73-32 73-75 0-44-34-71-72-71zm-1-37c30 0 57 13 77 33 0-22 35-22 35 1v150c-1 10 10 16 16 9 25-25 54-128-14-187-64-56-149-47-195-15-48 33-79 107-49 175 33 76 126 99 182 76 28-12 41 26 12 39-45 19-168 17-225-82-38-68-36-185 67-248 78-46 182-33 244 32 66 69 62 197-2 246-28 23-71 1-71-32v-11c-20 20-47 32-77 32-57 0-108-51-108-108 0-58 51-110 108-110" fill="#fff"/></svg>
     </a>
@@ -30,6 +15,29 @@ University of Cincinnati <br/><br/>
     </a>
 </div>
 
-<iframe src = "/ViewerJS/#../extra/resume.pdf" height='600' allowfullscreen webkitallowfullscreen style="width:100%;"></iframe>
+
+
+**Zuguang Liu (or simply Liu)** 
+
+<img src="/images/about/pro-shot.JPG" width=40% style="float:right;">
+
+
+Electrical Engineering <br/><br/>
+Bachelor of Science (May 2021) <br/>
+Master of Science (May 2022) <br/><br/>
+University of Cincinnati, USA <br/>
+
+
+​I am a multi-cultural learner who likes to apply my knowledge to incoming challenges. UC offers me a great opportunity with an outstanding EE curriculum and Co-op program. <br/><br/>
+
+
+I am currently seeking full-time position in two engineering fields
+ 
+- [Embedded Systems engineering](/extra/resume_embed.pdf) - design, prototype and implementation from hardware to software 
+- [Intelligent Systems engineering](/extra/resume_ai.pdf) - AI-related engieering including data analysis, image processing, intelligent robotics, etc.
+
+Click on the linked text to download the **resume** I prepared for the field.
+
+<!-- <iframe src = "/ViewerJS/#../extra/resume.pdf" height='300' allowfullscreen webkitallowfullscreen style="width:100%;"></iframe> -->
 
 <br/>

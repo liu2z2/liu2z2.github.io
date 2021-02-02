@@ -1,6 +1,6 @@
 ---
 Title: Professional Experience
-Slug: pro-exp
+Slug: professional-experience
 Status: hidden
 ---
 <p style= "float:right; padding: 0px 0px 0px 50px;" >
