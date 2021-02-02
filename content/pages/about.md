@@ -19,7 +19,7 @@ Status: hidden
 
 **Zuguang Liu (or simply Liu)** 
 
-<img src="/images/about/pro-shot.JPG" width=40% style="float:right;">
+<img src="/images/about/pro-shot.JPG" width=40% style="float:right;padding: 10px 10px 10px 10px;">
 
 Electrical Engineering <br/>
 Bachelor of Science (May 2021) <br/>
