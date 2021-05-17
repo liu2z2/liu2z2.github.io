@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://liu2z2.github.io/sitemap.xml
