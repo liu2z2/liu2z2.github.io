@@ -4,6 +4,7 @@ pelicanconf_local.py
 
 #Python
 *.py[cod]
+__pycache__/
 
 # C extensions
 *.so
