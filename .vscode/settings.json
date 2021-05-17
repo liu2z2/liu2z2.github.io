@@ -1,5 +1,5 @@
 {
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
-    "python.pythonPath": "/home/liu/bin/miniconda3/envs/githubio-website/bin/python"
+    "python.pythonPath": "/home/liu/bin/miniconda3/envs/ghio/bin/python"
 }
