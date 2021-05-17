@@ -2,5 +2,5 @@
 # Simply commit and push
 
 git add .
-git commit -a -m "${1:-Save source using `save`}"
+git commit -a -m "${1:-Autosave using `save`}"
 git push -u origin pelican-src
