@@ -14,7 +14,7 @@ REAL_SITEURL = "https://liu2z2.github.io"
 PATH = 'content'
 PAGE_PATHS = ['pages']
 ARTICLE_PATHS = ['articles']
-STATIC_PATHS = ['images', 
+STATIC_PATHS = ['images',
                 'ViewerJS',
                 'extra',
                 ]
