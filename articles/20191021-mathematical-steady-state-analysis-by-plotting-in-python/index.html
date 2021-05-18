@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="google-site-verification" content="iXlxw5kesqJmrOLBmyqGUYw3nZkBW2GBcnfuIni_910" />        <meta name="author" content="Liu" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="project, Projects, " />
+
+<meta property="og:title" content="Mathematical Steady State Analysis by Plotting in Python "/>
+<meta property="og:url" content="https://liu2z2.github.io/articles/20191021-mathematical-steady-state-analysis-by-plotting-in-python" />
+<meta property="og:description" content="The source of the project can be found here. This is not a whole project, but actually part of the final project on a class called Math Modelling. For the project, my friend, Wayne Stegner (Computer Engineering Undergraduate at UC), and I were supposed to model an age-based predation and …" />
+<meta property="og:site_name" content="Liu&#39;s ePortfolio" />
+<meta property="og:article:author" content="Liu" />
+<meta property="og:article:published_time" content="2019-10-21T00:00:00-04:00" />
+<meta name="twitter:title" content="Mathematical Steady State Analysis by Plotting in Python ">
+<meta name="twitter:description" content="The source of the project can be found here. This is not a whole project, but actually part of the final project on a class called Math Modelling. For the project, my friend, Wayne Stegner (Computer Engineering Undergraduate at UC), and I were supposed to model an age-based predation and …">
+
+        <title>Mathematical Steady State Analysis by Plotting in Python  · Liu&#39;s ePortfolio
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://liu2z2.github.io/theme/css/style.min.css?bec7d543">
+
+        <link href="https://liu2z2.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Liu&#39;s ePortfolio - Full Atom Feed" />
+
+
+    </head>
+    <body>
+        <div id="content">
+            <div class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="https://liu2z2.github.io/"><span class=site-name>Liu's ePortfolio</span></a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right top-menu">
+                                <li >
+                                    <a href=
+                                       https://liu2z2.github.io
+                                    >Home</a>
+                                </li>
+                                <li ><a href="https://liu2z2.github.io/professional-experience.html">Professional Experience</a></li>
+                                <li ><a href="https://liu2z2.github.io/categories">Posts</a></li>
+                                <li ><a href="https://liu2z2.github.io/tags">Tags</a></li>
+                                <li ><a href="https://liu2z2.github.io/archives">Archives</a></li>
+                                <li><form class="navbar-search" action="https://liu2z2.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span1"></div>
+                    <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+        <h1>
+            <a href="https://liu2z2.github.io/articles/20191021-mathematical-steady-state-analysis-by-plotting-in-python">
+                Mathematical Steady State Analysis by Plotting in Python
+            </a>
+        </h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div class="toc">
+<ul>
+<li><a href="#background">Background</a></li>
+<li><a href="#methodology">Methodology</a></li>
+<li><a href="#result">Result</a></li>
+<li><a href="#what-i-learned-from-this">What I learned from this</a></li>
+</ul>
+</div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
+            
+            
+<p>The source of the project can be found <a href="https://github.com/liu2z2/nullclineplot">here</a>.</p>
+<p>This is not a whole project, but actually part of the final project on a class called Math Modelling. For the project, my friend, Wayne Stegner (Computer Engineering Undergraduate at UC), and I were supposed to model an age-based predation and analyze the behavior of the model. This article will not focus on how we approached the model mathematically, but rather how we used Python to plot the model for the steady state analysis to avoid solving for multi-variable differential equations. </p>
+<h3 id="background">Background<a class="headerlink" href="#background" title="Permanent link">¶</a></h3>
+<p>The model was reduced to two equations in (Eq 1), where u and v are independent variables. <strong>Steady state</strong> is where <span class="math">\(\frac{du}{dt}\)</span> and <span class="math">\(\frac{dv}{dt}\)</span> are both 0. However, it can be difficult to solve by setting both equations to 0, so we can use nullclines of <span class="math">\(\frac{du}{dt}\)</span> and <span class="math">\(\frac{dv}{dt}\)</span> instead. <strong>Nullcline</strong> of a variable is the plot where the derivative this variable over time is 0. Therefore, the intercept of <span class="math">\(u\)</span> and <span class="math">\(v\)</span> represents steady state. Moreover, a steady state can also be <strong>stable</strong> or <strong>unstable</strong>. This is done by <strong>linear stability analysis</strong>. In this specific model, it was found that the steady state is stable if the equation in Eq. 2 is positive; otherwise unstable. Thus, the discussion over steady state is around two questions.</p>
+<ul>
+<li>Does steady state exist in the given domain? How many of them?</li>
+<li>Is the steady state stable?</li>
+</ul>
+<p>The Python script that plots the model is supposed to give a direct answer to these two questions. </p>
+<div class="math">$$
+\frac{d}{d\tau} v = B u - v - D v (u+v) - P v \\
+\frac{d}{d\tau} u = v - u (u+v) - Q u
+$$</div>
+<div style="text-align: right"> Differential Equations of the Model (Eq 1) </div>
+<div class="math">$$
+D = (- 1 - Du - 2Dv - P)(-2u - v - Q) - (1 - u)(B - D v)
+$$</div>
+<div style="text-align: right"> Stability Criterion (Eq 2) </div>
+<h3 id="methodology">Methodology<a class="headerlink" href="#methodology" title="Permanent link">¶</a></h3>
+<p>The two differential equations in Eq. 1 are both functions of <span class="math">\(u\)</span> and <span class="math">\(v\)</span>, so by plotting the u-nullcline and v-nullcline on a <span class="math">\(u\)</span>-vs-<span class="math">\(v\)</span> coordinate plane, steady state is where the two nullclines intercept. If they ever intercept, steady state exist, and how many intercepts dictates the number of steady states. </p>
+<p>Moreover, the <span class="math">\(D\)</span> variable in Eq. 2 is also a function of <span class="math">\(u\)</span> and <span class="math">\(v\)</span>, but now the criterion is its sign, or an inequality between 0. On one hand, plugging in a steady state expression that is already complicated is hard, on the other hand, graphically, such inequality separates the <span class="math">\(u-v\)</span> plane into two areas, positive <span class="math">\(D\)</span> and negative <span class="math">\(D\)</span>. Therefore, a contour map of this <span class="math">\(D\)</span> function can be superimposed onto the two nullcline plot. If their intercept is located in <span class="math">\(D&gt;0\)</span> region, the steady state is stable; otherwise unstable. </p>
+<h3 id="result">Result<a class="headerlink" href="#result" title="Permanent link">¶</a></h3>
+<p>The plotting was successful. We were able to test the steady states by setting different external parameters (<span class="math">\(B\)</span>, <span class="math">\(D\)</span>, <span class="math">\(P\)</span> and <span class="math">\(Q\)</span>) and draw conclusions out of the testings without math-heavy calculations. Some example results are shown figures below. </p>
+<figure>
+<img src="/images/project-nullclineplot/plt1.webp"/>
+<img src="/images/project-nullclineplot/plt2.webp"/>
+<img src="/images/project-nullclineplot/plt3.webp"/>
+</figure>
+<h3 id="what-i-learned-from-this">What I learned from this<a class="headerlink" href="#what-i-learned-from-this" title="Permanent link">¶</a></h3>
+<p>Math sometimes can be hard and time-consuming for engineers. Luckily, with adequate programming skills, computer plotting can be helpful, making math analysis experimental. Such implementation, however, requires a clear vision on the math itself as well as an appropriate way to visualize the data. For our math modelling project, we were able to identify the two questions the analysis is based upon, and create a good method to answer both in one plot, making the program useful to the analysis. </p>
+<p><strong>For questions regarding the program or the math model itself, please contact me using the sidebar or contact Wayne Stegner at stegnewe@mail.uc.edu.</strong></p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+
+
+             
+ 
+            
+            
+            
+
+
+
+
+
+
+<section>
+    <h6 style="display:none;">Comments</h6>
+    <p id="comment-message"> </p>
+
+    <div class="accordion" id="accordion2">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle disqus-comment-count comment-count"
+                   data-toggle="collapse"
+                   data-parent="#accordion2"
+                   href="https://liu2z2.github.io/articles/20191021-mathematical-steady-state-analysis-by-plotting-in-python#comment_thread"
+                   id="comment-accordion-toggle">
+                    Comments
+                </a>
+            </div>
+            <div id="comment_thread" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <div class="comments">
+
+                        <script src="https://utteranc.es/client.js"
+        data-repo="liu2z2/liu2z2.github.io"
+        data-issue-term="https://liu2z2.github.io/articles/20191021-mathematical-steady-state-analysis-by-plotting-in-python"
+        data-label="Comments"
+        data-theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <hr/>
+            <aside>
+            <nav>
+            <ul class="articles-timeline">
+                <li class="previous-article">« <a href="https://liu2z2.github.io/articles/20191021-using-google-calendar-api-to-auto-create-tutoring-events" title="Previous: Using Google Calendar API to Auto-Create Tutoring Events">Using Google Calendar API to Auto-Create Tutoring Events</a></li>
+                <li class="next-article"><a href="https://liu2z2.github.io/articles/20191202-a-chiptune-music-system-with-opl2-and-reality-adlib-tracker" title="Next: A Chiptune Music System with OPL2 and Reality Adlib Tracker">A Chiptune Music System with OPL2 and Reality Adlib Tracker</a> »</li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section id="article-sidebar" class="span2">
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2019-10-21T00:00:00-04:00">Oct 21, 2019</time>
+            <h4>Category</h4>
+            <a class="category-link" href="https://liu2z2.github.io/categories#projects-ref">Projects</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="https://liu2z2.github.io/tags#project-ref">project
+                    <span>3</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+<div id="sidebar-social-link">
+    <a href="mailto:liu2z2@mail.uc.edu" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Mail" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#328cff"/><path d="m250 186c-46 0-69 35-69 74 0 44 29 72 68 72 43 0 73-32 73-75 0-44-34-71-72-71zm-1-37c30 0 57 13 77 33 0-22 35-22 35 1v150c-1 10 10 16 16 9 25-25 54-128-14-187-64-56-149-47-195-15-48 33-79 107-49 175 33 76 126 99 182 76 28-12 41 26 12 39-45 19-168 17-225-82-38-68-36-185 67-248 78-46 182-33 244 32 66 69 62 197-2 246-28 23-71 1-71-32v-11c-20 20-47 32-77 32-57 0-108-51-108-108 0-58 51-110 108-110" fill="#fff"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/liu-uc/" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn" role="img" viewBox="0 0 512 512" fill="#fff"><rect width="512" height="512" rx="15%" fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+    </a>
+    <a href="https://github.com/liu2z2" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+    </a>
+</div>
+            
+
+
+
+
+
+            
+
+
+
+
+
+        </section>
+</div>
+</article>
+                    </div>
+                    <div class="span1"></div>
+                </div>
+            </div>
+        </div>
+<footer>
+    <div>
+        Content licensed under <a rel="license nofollow noopener noreferrer"
+    href="https://www.gnu.org/licenses/agpl-3.0.en.html" target="_blank">
+    GNU Affero General Public License</a>.
+    </div>
+
+
+
+
+    <div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" title="Pelican Home Page" target="_blank" rel="nofollow noopener noreferrer">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" title="Theme Elegant Home Page" target="_blank" rel="nofollow noopener noreferrer">Elegant</a>
+        Hosted on:
+        <a href=https://github.com/liu2z2/liu2z2.github.io target="_blank" rel="nofollow noopener noreferrer">
+            GitHub
+        </a>
+    </div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    <script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script>
+var sc_project=12472197;
+var sc_invisible=1;
+var sc_security="98c4a201";
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="web analytics"
+href="http://statcounter.com/" target="_blank" rel="nofollow noopener noreferrer"><img
+class="statcounter"
+src="//c.statcounter.com/12472197/0/98c4a201/1/"
+alt="web analytics"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+    </body>
+    <!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>
