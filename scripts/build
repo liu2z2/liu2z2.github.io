@@ -1,4 +1,0 @@
-#!/bin/sh
-# Build HTML from source content
-
-pelican content -o output -s publishconf.py

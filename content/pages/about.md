@@ -32,8 +32,8 @@ University of Cincinnati, USA <br/>
 
 I am currently seeking full-time position in two engineering fields
  
-- [Embedded Systems engineering](/extra/resume_embed.pdf) - design, prototype and implementation from hardware to software 
-- [Intelligent Systems engineering](/extra/resume_ai.pdf) - AI-related engieering including data analysis, image processing, intelligent robotics, etc.
+- [Embedded Systems engineering](/extra/resume_hw.pdf) - design, prototype and implementation from hardware to software 
+- [Intelligent Systems engineering](/extra/resume_sw.pdf) - AI-related engieering including data analysis, image processing, intelligent robotics, etc.
 
 Click on the linked text to download the **resume** I prepared for the field.
 

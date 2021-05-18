@@ -1,8 +1,0 @@
-#!/bin/sh
-# Rebuild, commit and push
-
-scripts/save
-scripts/build
-ghp-import output -r origin -b main
-git push origin main
-git checkout pelican-src

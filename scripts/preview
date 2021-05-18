@@ -1,6 +1,0 @@
-#!/bin/sh
-# Build and local host to preview
-
-scripts/build
-xdg-open "http://localhost:8000/" &
-pelican --autoreload --listen

@@ -76,5 +76,11 @@ github: publish
 	ghp-import -m "Generate Pelican site" -b $(GITHUB_PAGES_BRANCH) "$(OUTPUTDIR)"
 	git push origin $(GITHUB_PAGES_BRANCH)
 
+resume:
+	gh release download --pattern "*hw.pdf" --repo liu2z2/resume --dir content/extra
+	mv content/extra/*hw.pdf content/extra/resume_hw.pdf
+	gh release download --pattern "*sw.pdf" --repo liu2z2/resume --dir content/extra
+	mv content/extra/*sw.pdf content/extra/resume_sw.pdf
 
-.PHONY: html help clean regenerate serve serve-global devserver publish github
+.PHONY: html help clean regenerate serve serve-global devserver publish github resume
+
