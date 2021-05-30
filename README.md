@@ -12,7 +12,7 @@ Rendered HTML available at [pelican-src](../../tree/pelican-src) branch
 ## Example Build
 1. Checkout [pelican-src](../../tree/pelican-src) branch.
 2. Install Python dependencies, confirmed working set is constructed with conda listed in `environment.yml`.
-3. Build content with [pelican wiki](https://docs.getpelican.com/en/latest/publish.html) or `Makefile` (`make help` for more info).
+3. Build content according to [pelican wiki](https://docs.getpelican.com/en/latest/publish.html) or with `Makefile` (`make help` for more info).
 
 ## Contact
 For any questions regarding the repository, please open a [issue ticket](../../issues/new), or [contact me](https://github.com/liu2z2) personally.
