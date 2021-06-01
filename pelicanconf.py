@@ -8,7 +8,7 @@ SITEURL = "http://localhost:8000"
 REAL_SITEURL = "https://liu2z2.github.io"
 
 ############################################
-# Path settings
+# Paths
 ############################################
 
 PATH = 'content'
@@ -22,7 +22,7 @@ EXTRA_PATH_METADATA = {'images/GitHub-logo.ico': {'path':'favicon.ico'},
                        'extra/robots.txt': {'path':'robots.txt'}}
 
 ############################################
-# Basic settings
+# Basics
 ############################################
 TIMEZONE = 'US/Eastern'
 DEFAULT_LANG = 'en-US'
@@ -38,9 +38,9 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-############################################
-# Plugin settings
-############################################
+###############################################################################
+# Plugins
+###############################################################################
 PLUGIN_PATHS = ['plugins']
 PLUGINS = ['assets', # https://github.com/getpelican/pelican-plugins/tree/master/assets
            'tipue_search',  # https://github.com/getpelican/pelican-plugins/tree/master/tipue_search
@@ -67,14 +67,15 @@ SITEMAP = {
         'pages': 'monthly'
     }
 }
-# CLAIM_GOOGLE = u'iXlxw5kesqJmrOLBmyqGUYw3nZkBW2GBcnfuIni_910'
-STAT_COUNTER_PROJECT = 12472197
-STAT_COUNTER_SECURITY = u'98c4a201'
 
+###############################################################################
+# Analytics
+##############################################################################
+NULLITICS = True
 
-############################################
-# Landing page configuration
-############################################
+###############################################################################
+# Landing page
+###############################################################################
 LANDING_PAGE_TITLE = "Hello! Welcome to Liu's ePortfolio!"
 PROJECTS_TITLE = "Read more about ..."
 PROJECTS = [
@@ -96,9 +97,9 @@ PROJECTS = [
 ]
 RECENT_ARTICLES_COUNT = 3
 
-############################################
-# Footer configuration
-############################################
+###############################################################################
+# Footer
+###############################################################################
 SITE_LICENSE = """Content licensed under <a rel="license nofollow noopener noreferrer"
     href="https://www.gnu.org/licenses/agpl-3.0.en.html" target="_blank">
     GNU Affero General Public License</a>."""
@@ -107,9 +108,9 @@ HOSTED_ON = {
     "url": "https://github.com/liu2z2/liu2z2.github.io"
     }
 
-############################################
+###############################################################################
 # Content page configuration
-############################################
+###############################################################################
 SOCIAL = (
     ('Email', 'liu2z2@mail.uc.edu'),
     ("linkedin", "https://www.linkedin.com/in/liu-uc/"),
@@ -128,9 +129,9 @@ DEFAULT_METADATA = {
     'author': 'Liu',
 }
 
-############################################
+###############################################################################
 # Markdown configuration
-############################################
+###############################################################################
 MARKDOWN = {
     'extension_configs': {
         'markdown.extensions.extra': {},
