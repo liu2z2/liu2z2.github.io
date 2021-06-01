@@ -15,5 +15,5 @@ Rendered HTML available at [pelican-src](../../tree/pelican-src) branch
 3. Build content according to [pelican wiki](https://docs.getpelican.com/en/latest/publish.html) or with `Makefile` (`make help` for more info).
 
 ## Contact
-For any questions regarding the repository, please open a [issue ticket](../../issues/new), or [contact me](https://github.com/liu2z2) personally.
+For any questions regarding the repository, please open a [issue ticket](../../issues/new), or [contact me](https://github.com/liu2z2#contact-me) personally.
 I do not have too much experience on web front-end but I will try to help as much as I can.
