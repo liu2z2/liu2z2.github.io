@@ -7,7 +7,7 @@ Tags: project
 [TOC]
 
 
-The source of the project can be found [here](https://github.com/liu2z2/Chiptune).
+The source of the project can be found at my GitHub [repo](https://github.com/liu2z2/opl2-chiptune).
 
 The objective of the project is to build a system with the old-school electronic components that plays Chiptune music, as well as composing the music with compatible software. This is a project for the class Japanese Music Online during Fall 2019 semester.  Dr. Kazuaki Shiota was really nice to let me do this for the final project of the class. The project helped me understand the theory behind Chiptune Music from a musical and engineering standpoint. 
 
