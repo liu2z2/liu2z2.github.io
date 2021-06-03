@@ -47,4 +47,3 @@ dependencies:
   - pip:
     - pelican-neighbors==1.2.0
     - pelican-sitemap==1.0.2
-prefix: /home/liu/bin/miniconda3/envs/ghio

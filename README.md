@@ -5,13 +5,26 @@ My personal ePortfolio and blog.
 - Using theme [Elegant](https://elegant.oncrashreboot.com/)
 
 ## Branches
-Source code and source content available at [main](../../tree/main) branch
+I am not an expert in web development so I used a static site generator in a language I am familiar with.
+- Source code and source content available at [main](../../tree/main) branch.
+- Rendered HTML available at [pelican-src](../../tree/pelican-src) branch.
 
-Rendered HTML available at [pelican-src](../../tree/pelican-src) branch
+## Dependencies
+A confirmed working set of environment is built with conda in linux-64.
+- [Pelican](https://blog.getpelican.com/) to generate HTML from source
+- [Elegant](https://elegant.oncrashreboot.com/) as theme, a local copy is kept in `pelican-themes/elegant`
+- Pelican plugins, they are either available from pip3 or kept as local copy in `plugins/`
+  - [Web Assets](https://github.com/pelican-plugins/webassets)
+  - [Tipue Search](https://github.com/getpelican/pelican-plugins/tree/master/tipue_search)
+  - [Post Statistics](https://github.com/getpelican/pelican-plugins/tree/master/post_stats)
+  - [Neighbor Articles](https://github.com/pelican-plugins/neighbors)
+  - [Extract Table of Content](https://github.com/getpelican/pelican-plugins/tree/master/extract_toc)
+  - [Render Math](https://github.com/pelican-plugins/render-math)
+  - [Sitemap](https://github.com/pelican-plugins/sitemap)
 
 ## Example Build
 1. Checkout [pelican-src](../../tree/pelican-src) branch.
-2. Install Python dependencies, confirmed working set is constructed with conda listed in `environment.yml`.
+2. Install Python 3 and [dependencies](#dependencies), confirmed working set is listed in `environment.yml` (installation see [Managing conda environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)).
 3. Build content according to [pelican wiki](https://docs.getpelican.com/en/latest/publish.html) or with `Makefile` (`make help` for more info).
 
 ## Contact
