@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Liu" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="project, hardware, class, Projects, " />
+
+<meta property="og:title" content="Gate-Level Control Unit Design "/>
+<meta property="og:url" content="https://liu2z2.github.io/articles/20210426-gate-level-control-unit-design" />
+<meta property="og:description" content="This article talks about the technical aspects and takeaway from two inter-connecting projects from Intro to Computer Architecture and Organization Class. The detail about the class is explained in my Spring 2021 Remark. More info about the projects is available at my class-files repo. Non-Pipelined Control Unit¶ A single-bus processing …" />
+<meta property="og:site_name" content="Liu&#39;s ePortfolio" />
+<meta property="og:article:author" content="Liu" />
+<meta property="og:article:published_time" content="2021-04-26T00:00:00-04:00" />
+<meta name="twitter:title" content="Gate-Level Control Unit Design ">
+<meta name="twitter:description" content="This article talks about the technical aspects and takeaway from two inter-connecting projects from Intro to Computer Architecture and Organization Class. The detail about the class is explained in my Spring 2021 Remark. More info about the projects is available at my class-files repo. Non-Pipelined Control Unit¶ A single-bus processing …">
+
+        <title>Gate-Level Control Unit Design  · Liu&#39;s ePortfolio
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://liu2z2.github.io/theme/css/style.min.css?bec7d543">
+
+        <link href="https://liu2z2.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Liu&#39;s ePortfolio - Full Atom Feed" />
+
+
+    </head>
+    <body>
+        <div id="content">
+            <div class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="https://liu2z2.github.io/"><span class=site-name>Liu's ePortfolio</span></a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right top-menu">
+                                <li >
+                                    <a href=
+                                       https://liu2z2.github.io
+                                    >Home</a>
+                                </li>
+                                <li ><a href="https://liu2z2.github.io/professional-experience.html">Professional Experience</a></li>
+                                <li ><a href="https://liu2z2.github.io/categories">Posts</a></li>
+                                <li ><a href="https://liu2z2.github.io/tags">Tags</a></li>
+                                <li ><a href="https://liu2z2.github.io/archives">Archives</a></li>
+                                <li><form class="navbar-search" action="https://liu2z2.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span1"></div>
+                    <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+        <h1>
+            <a href="https://liu2z2.github.io/articles/20210426-gate-level-control-unit-design">
+                Gate-Level Control Unit Design
+            </a>
+        </h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+    <div class="span2 table-of-content">
+        <nav>
+        <h4>Contents</h4>
+        <div class="toc">
+<ul>
+<li><a href="#non-pipelined-control-unit">Non-Pipelined Control Unit</a><ul>
+<li><a href="#solution-brief">Solution Brief</a></li>
+<li><a href="#takeaway">Takeaway</a></li>
+</ul>
+</li>
+<li><a href="#pipelined-control-unit">Pipelined Control Unit</a><ul>
+<li><a href="#solution-brief_1">Solution Brief</a></li>
+<li><a href="#takeaway_1">Takeaway</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </nav>
+    </div>
+    <div class="span8 article-content">
+            
+            
+<p>This article talks about the technical aspects and takeaway from two inter-connecting projects from Intro to Computer Architecture and Organization Class.
+The detail about the class is explained in my <a href="../Discussion/spring-2021.md">Spring 2021 Remark</a>.
+More info about the projects is available at my <a href="https://github.com/liu2z2/class-files/tree/main/fall2021-comp-org">class-files repo</a>.</p>
+<h3 id="non-pipelined-control-unit">Non-Pipelined Control Unit<a class="headerlink" href="#non-pipelined-control-unit" title="Permanent link">¶</a></h3>
+<p>A single-bus processing unit was designed capable of executing a set of instructions specified as in Fig. 1.
+The design was implemented at the gate level. Some restrictions of the assignment include:</p>
+<ul>
+<li>Design should be restricted to single-bus paradigm. No point-to-point connections.</li>
+<li>Read-only memory (ROM) may be used to contain up to 8 constants. Its design can be specified descriptively.</li>
+<li>Main memory (MM) design can be specified descriptively and performs asynchronously</li>
+<li>Gate level design must only use MUX, DEMUX, encoder, decoder, flip-flop and gates.</li>
+<li>Detailed count-down timer design can be specified descriptively.</li>
+</ul>
+<figure>
+<img src="/images/project-control-unit/instr-table.png"/>
+<figcaption> <small> Fig. 1: Instruction set </small> </figcaption>
+</figure>
+<h4 id="solution-brief">Solution Brief<a class="headerlink" href="#solution-brief" title="Permanent link">¶</a></h4>
+<p>We presented our design in a modular structure, which of which is used extensively by the CPU to meet the design requirements and achieve optimization.
+An abstract overview of the CPU is shown in Fig. 2.
+Data used in the instructions is pushed to a 16-bit bus as the only conveyance before being delivered to the intended locations.</p>
+<figure>
+<img src="/images/project-control-unit/data-path.png"/>
+<figcaption> <small> Fig. 2: Abstract view of the data path </small> </figcaption>
+</figure>
+<p>We started the Control Unit design by firstly defining the control signals needed in each instructions, during which we also discussed necessary changes and possible optimizations in the data path.
+The common fetch-decode-execute sequence was adopted as a general guideline.
+Afterwards, the control signals are collapsed into groups such that states can be determined, as well as the state transition.
+With the aforementioned state information narrowed down, the gate-level circuit was implemented as a Moore machine whose input is Opcode and various control flags from other components on the data bus, and whose output is to enable tri-state buffers on data paths.</p>
+<figure>
+<img src="/images/project-control-unit/state-trans.png"/>
+<figcaption> <small> Fig. 3: State transition diagram </small> </figcaption>
+</figure>
+<figure>
+<img src="/images/project-control-unit/control-unit.png"/>
+<figcaption> <small> Fig. 4: Control unit block component view </small> </figcaption>
+</figure>
+<p>Detail on other components is explained in the <a href="https://github.com/liu2z2/class-files/tree/main/fall2021-comp-org/project-3-report.pdf">project report</a>. Related optimizations include:</p>
+<ul>
+<li>We use Y and Z as pre- and post- buffer for the ALU operations, respectively, by statically writing in common register values.</li>
+<li>Insead of sending six different control signals to dictate ALU functions for Opcode 0-5, whose operands are in similar format, the control unit commences a master signal which lets the ALU requests the Opcode directly to decide on the specific logical/arithmetic operations.</li>
+<li>The ALU utilizes a carry lookahead adder-subtractor circuit in order to add or subtract two 16-bit values and output a single 16-bit value.
+  The carry lookahead generator, while it utilizes more gates than the
+  ripple-carry adder design, results in a significant decrease in propagation delay and performance time through the operations.</li>
+</ul>
+<figure>
+<img src="/images/project-control-unit/data-path-block.png"/>
+<figcaption> <small> Fig 5: Data path block diagram </small> </figcaption>
+</figure>
+<h4 id="takeaway">Takeaway<a class="headerlink" href="#takeaway" title="Permanent link">¶</a></h4>
+<p>In this project, we went through the design and part of the implementation phase of a digital/register level project.
+We broke down the specification, explored possible solution, discussed possible optimization and eventually documented our solution within the time constraints.
+As a class assignment, we have scored the highest grade with a few points taken off due to formatting inconsistency.
+The project also gave us a chance to reflect on our understanding of the material, and luckily we were given enough time to clarify some questions over the discussion of the project.</p>
+<h3 id="pipelined-control-unit">Pipelined Control Unit<a class="headerlink" href="#pipelined-control-unit" title="Permanent link">¶</a></h3>
+<p>In this project, we were assigned to design a CPU with almost the same functionality, except the operation can be pipelined, and that the gate-level implementation is not required.
+Other limitations include I/O constraints, register space capacity, etc, are listed below.</p>
+<ul>
+<li>No hard restriction on data path, but all paths should be used reasonably.</li>
+<li>Main memory (MM) has separate instruction and data ports that can be used simultaneously.</li>
+<li>Register file (GPR) has 3 read ports and 2 write ports and all can be accessed simultaneously.</li>
+<li>The pipeline should include at least three stages, corresponding to the fetch/decode/execute cycle.</li>
+<li>Read-only memory (ROM) may be used to contain up to 8 constants.</li>
+</ul>
+<h4 id="solution-brief_1">Solution Brief<a class="headerlink" href="#solution-brief_1" title="Permanent link">¶</a></h4>
+<p>As the functionality of this machine has many parts that overlap with the previous project, the detailed design and implementation were only briefly covered, whereas the pipeline is mainly discussed in the solution.</p>
+<p>Our pipeline design consists of four unique stages: F1, F2, D1 and E1, matching the fetch/decode/execute cycle instruction cycle (Figure 6).
+Although some states share hardware resources, each has its own portion of the data path and dedicated portion of the control unit.
+By this design, each state only uses 1 clock cycle to finish, resulting in an ideal instruction completion time of 4 clock cycles - with a possible 4 instructions in the pipeline.
+Though it was hard to implement such system, this was a firm decision we made at the very beginning and we were determined to resolve the hazards from it.</p>
+<figure>
+<img src="/images/project-control-unit/pipeline-timing.png"/>
+<figcaption> <small> Fig. 6: Four stage pipeline </small> </figcaption>
+</figure>
+<p>Before we decipher the hazards individually, we designed a hardware queue system that dispatches instruction register (IR) and PC data to each stages, ensuring the correct flow of the pipeline.
+The implementation of the queuing on IR and PC is 16 stacks of 4-bit and 3-bit shift registers, respectively, shown in Fig. 7.
+The memory organization of them can be seen in Fig. 8, where each row is a shift register that can be controlled to shift, keep, or clear on each element, whereas a column represents a full IR/PC data.
+Additionally, by having a digitally controlled buffer from the clock to the RESET of the flip-flops, the register can also be cleared synchronously with the rest of the machine.</p>
+<figure>
+<img src="/images/project-control-unit/q-mem-org.png"/>
+<figcaption> <small> Fig. 7: Memory organization of the queues </small> </figcaption>
+</figure>
+<figure>
+<img src="/images/project-control-unit/shift-reg.png"/>
+<figcaption> <small> Fig. 8: Partial demonstration of shift register control </small> </figcaption>
+</figure>
+<p>Thus, to reflect this queue transition, the control unit commences command for various event during runtime.
+The control unit on the top level is demonstrated in Fig. 9.</p>
+<figure>
+<img src="/images/project-control-unit/pipeline-control-unit.png"/>
+<figcaption> <small> Fig. 9: Control unit top level design </small> </figcaption>
+</figure>
+<p>The Stage Controller enables and disables the stages of the pipeline. The Queue Controller keeps the queue in synchronization with the stage behavior by moving forward the shift registers.
+At this level, the machine can be seen repeating on a normal state so long as there are no hazards or exceptions.
+In the event when they appear, the control unit enters states where it resolves the issue, then go back to looping state.
+These states are listed in Fig. 10, along with the GO state when the machine operates normally.
+The table also specifies whether to enable specific stages and the control over the queue, which will be justified in sections on hazards and exceptions.</p>
+<figure>
+<img src="/images/project-control-unit/pipeline-states.png"/>
+<figcaption> <small> Fig. 10: States </small> </figcaption>
+</figure>
+<p>Structural hazards, data hazards and control hazards are addressed separately.
+The main idea in our solution is stalling, or descriptively, prioritize execution (E1), and keep other stages from moving, until the hazard is unflagged.
+The analysis of each can be found in the project report.
+A summary is we exhaust all possible hazards, determined the true conditions, such that the implementation could be as simple as combinatorial gates.
+As for control hazards, we were well aware that a dynamic branch predictor is more popular and normally more efficient.
+However, since the data path design is determined before considering the control hazards, a limitation is placed to only update PC at execution (E1), making it ineffective even if the predictor predicts “taken”.
+Thus, it was decided to use a branch predictor that statically predicts “not taken”.</p>
+<figure>
+<img src="/images/project-control-unit/hazard-timing.png"/>
+<figcaption> <small> Fig. 11: Hazard delay example </small> </figcaption>
+</figure>
+<h4 id="takeaway_1">Takeaway<a class="headerlink" href="#takeaway_1" title="Permanent link">¶</a></h4>
+<p>Compared to the previous assignment, though not requiring a gate-level implementation, this project was more analytically challenging for us as it requires deeper and applicable understanding of pipeline design.
+Plus, we also decided on a even more ambitious goal of only allows one step in each stage.
+Luckily, with the collective effort of trials and errors, we were able to make sense of everything and deliver the project in time.</p>
+<p>Continuing the project, though not required as an assignment, we hope with capable hardware such as FPGA, we could actually implement both machines to reality.</p>
+
+
+             
+ 
+            
+            
+            
+
+
+
+
+
+
+<section>
+    <h6 style="display:none;">Comments</h6>
+    <p id="comment-message"> </p>
+
+    <div class="accordion" id="accordion2">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle disqus-comment-count comment-count"
+                   data-toggle="collapse"
+                   data-parent="#accordion2"
+                   href="https://liu2z2.github.io/articles/20210426-gate-level-control-unit-design#comment_thread"
+                   id="comment-accordion-toggle">
+                    Comments
+                </a>
+            </div>
+            <div id="comment_thread" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <div class="comments">
+
+                        <script src="https://utteranc.es/client.js"
+        data-repo="liu2z2/liu2z2.github.io"
+        data-issue-term="https://liu2z2.github.io/articles/20210426-gate-level-control-unit-design"
+        data-label="Comments"
+        data-theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <hr/>
+            <aside>
+            <nav>
+            <ul class="articles-timeline">
+                <li class="previous-article">« <a href="https://liu2z2.github.io/articles/20200617-artneuroscience-combined-honors-seminar-reflection" title="Previous: Art/Neuroscience Combined Honors Seminar Reflection">Art/Neuroscience Combined Honors Seminar Reflection</a></li>
+                <li class="next-article"><a href="https://liu2z2.github.io/articles/20210501-modular-garden-monitoring-system-senior-design-project" title="Next: Modular Garden Monitoring System (Senior Design Project)">Modular Garden Monitoring System (Senior Design Project)</a> »</li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section id="article-sidebar" class="span2">
+    <h4>Reading Time</h4>
+    <p>~6 min read</p>
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2021-04-26T00:00:00-04:00">Apr 26, 2021</time>
+            <h4>Category</h4>
+            <a class="category-link" href="https://liu2z2.github.io/categories#projects-ref">Projects</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="https://liu2z2.github.io/tags#class-ref">class
+                    <span>1</span>
+</a></li>
+                <li><a href="https://liu2z2.github.io/tags#hardware-ref">hardware
+                    <span>1</span>
+</a></li>
+                <li><a href="https://liu2z2.github.io/tags#project-ref">project
+                    <span>5</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+<div id="sidebar-social-link">
+    <a href="mailto:liu2z2@mail.uc.edu" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Mail" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#328cff"/><path d="m250 186c-46 0-69 35-69 74 0 44 29 72 68 72 43 0 73-32 73-75 0-44-34-71-72-71zm-1-37c30 0 57 13 77 33 0-22 35-22 35 1v150c-1 10 10 16 16 9 25-25 54-128-14-187-64-56-149-47-195-15-48 33-79 107-49 175 33 76 126 99 182 76 28-12 41 26 12 39-45 19-168 17-225-82-38-68-36-185 67-248 78-46 182-33 244 32 66 69 62 197-2 246-28 23-71 1-71-32v-11c-20 20-47 32-77 32-57 0-108-51-108-108 0-58 51-110 108-110" fill="#fff"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/liu-uc/" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn" role="img" viewBox="0 0 512 512" fill="#fff"><rect width="512" height="512" rx="15%" fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+    </a>
+    <a href="https://github.com/liu2z2" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+    </a>
+</div>
+            
+
+
+
+
+
+            
+
+
+
+
+
+        </section>
+</div>
+</article>
+                    </div>
+                    <div class="span1"></div>
+                </div>
+            </div>
+        </div>
+<footer>
+    <div>
+        Content licensed under <a rel="license nofollow noopener noreferrer"
+    href="https://www.gnu.org/licenses/agpl-3.0.en.html" target="_blank">
+    GNU Affero General Public License</a>.
+    </div>
+
+
+
+
+    <div id="analytics">
+        Using <a href="https://nullitics.com/" title="Nullitics Analytics" target="_blank" rel="nofollow noopener noreferrer">Nullitics</a> as open-source privacy-focused analytics tool
+    </div>
+
+    <div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" title="Pelican Home Page" target="_blank" rel="nofollow noopener noreferrer">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" title="Theme Elegant Home Page" target="_blank" rel="nofollow noopener noreferrer">Elegant</a>
+        Hosted on:
+        <a href=https://github.com/liu2z2/liu2z2.github.io target="_blank" rel="nofollow noopener noreferrer">
+            GitHub
+        </a>
+    </div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    <script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+
+<!-- Start of Nullitics Analytics -->
+<script type="text/javascript">
+new Image().src='https://nullitics.com/null.gif'+
+  '?u='+encodeURI(location.href)+
+  '&r='+encodeURI(document.referrer)+
+  '&d='+screen.width
+</script>
+
+<noscript><img src="https://nullitics.com/null.gif" /></noscript>
+<!-- End of Nullitics Analytics -->    </body>
+    <!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>

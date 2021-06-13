@@ -5,14 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://liu2z2.github.io/</loc>
-<lastmod>2021-06-01T20:00:23-00:00</lastmod>
+<lastmod>2021-06-13T19:33:00-00:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
+<loc>https://liu2z2.github.io/articles/20221106-spring-2021-remark</loc>
+<lastmod>2022-11-06T00:00:00-04:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.6</priority>
+</url>
+
+<url>
 <loc>https://liu2z2.github.io/articles/20210501-modular-garden-monitoring-system-senior-design-project</loc>
 <lastmod>2021-05-01T00:00:00-04:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.6</priority>
+</url>
+
+<url>
+<loc>https://liu2z2.github.io/articles/20210426-gate-level-control-unit-design</loc>
+<lastmod>2021-04-26T00:00:00-04:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.6</priority>
 </url>
@@ -89,7 +103,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://liu2z2.github.io/category/discussion.html</loc>
-<lastmod>2020-06-17T00:00:00-04:56</lastmod>
+<lastmod>2022-11-06T00:00:00-04:56</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -102,8 +116,29 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>https://liu2z2.github.io/tag/discussion.html</loc>
+<lastmod>2022-11-06T00:00:00-04:56</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>https://liu2z2.github.io/tag/project.html</loc>
 <lastmod>2021-05-01T00:00:00-04:56</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://liu2z2.github.io/tag/hardware.html</loc>
+<lastmod>2021-04-26T00:00:00-04:56</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://liu2z2.github.io/tag/class.html</loc>
+<lastmod>2021-04-26T00:00:00-04:56</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -117,7 +152,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://liu2z2.github.io/author/liu.html</loc>
-<lastmod>2021-05-01T00:00:00-04:56</lastmod>
+<lastmod>2022-11-06T00:00:00-04:56</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.5</priority>
 </url>

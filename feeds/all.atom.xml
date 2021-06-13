@@ -1,8 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Liu's ePortfolio</title><link href="https://liu2z2.github.io/" rel="alternate"></link><link href="https://liu2z2.github.io/feeds/all.atom.xml" rel="self"></link><id>https://liu2z2.github.io/</id><updated>2021-05-01T00:00:00-04:00</updated><entry><title>Modular Garden Monitoring System (Senior Design Project)</title><link href="https://liu2z2.github.io/articles/20210501-modular-garden-monitoring-system-senior-design-project" rel="alternate"></link><published>2021-05-01T00:00:00-04:00</published><updated>2021-05-01T00:00:00-04:00</updated><author><name>Liu</name></author><id>tag:liu2z2.github.io,2021-05-01:/articles/20210501-modular-garden-monitoring-system-senior-design-project</id><content type="html">&lt;div class="toc"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Liu's ePortfolio</title><link href="https://liu2z2.github.io/" rel="alternate"></link><link href="https://liu2z2.github.io/feeds/all.atom.xml" rel="self"></link><id>https://liu2z2.github.io/</id><updated>2022-11-06T00:00:00-04:00</updated><entry><title>Spring 2021 Remark</title><link href="https://liu2z2.github.io/articles/20221106-spring-2021-remark" rel="alternate"></link><published>2022-11-06T00:00:00-04:00</published><updated>2022-11-06T00:00:00-04:00</updated><author><name>Liu</name></author><id>tag:liu2z2.github.io,2022-11-06:/articles/20221106-spring-2021-remark</id><content type="html">&lt;div class="toc"&gt;
+&lt;ul&gt;&lt;/ul&gt;
+&lt;/div&gt;</content><category term="Discussion"></category><category term="discussion"></category></entry><entry><title>Modular Garden Monitoring System (Senior Design Project)</title><link href="https://liu2z2.github.io/articles/20210501-modular-garden-monitoring-system-senior-design-project" rel="alternate"></link><published>2021-05-01T00:00:00-04:00</published><updated>2021-05-01T00:00:00-04:00</updated><author><name>Liu</name></author><id>tag:liu2z2.github.io,2021-05-01:/articles/20210501-modular-garden-monitoring-system-senior-design-project</id><content type="html">&lt;div class="toc"&gt;
 &lt;ul&gt;&lt;/ul&gt;
 &lt;/div&gt;
-&lt;iframe id="lbry-iframe" width="560" height="315" src="https://odysee.com/$/embed/mgms/3dc55404ac7641b69029c516e8d3dc4355a71381?r=CSvAscaSzRs3YGifseotXHHmkb7njV6C" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="Projects"></category><category term="project"></category></entry><entry><title>Art/Neuroscience Combined Honors Seminar Reflection</title><link href="https://liu2z2.github.io/articles/20200617-artneuroscience-combined-honors-seminar-reflection" rel="alternate"></link><published>2020-06-17T00:00:00-04:00</published><updated>2020-06-17T00:00:00-04:00</updated><author><name>Liu</name></author><id>tag:liu2z2.github.io,2020-06-17:/articles/20200617-artneuroscience-combined-honors-seminar-reflection</id><summary type="html">
+&lt;iframe id="lbry-iframe" width="560" height="315" src="https://odysee.com/$/embed/mgms/3dc55404ac7641b69029c516e8d3dc4355a71381?r=CSvAscaSzRs3YGifseotXHHmkb7njV6C" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="Projects"></category><category term="project"></category></entry><entry><title>Gate-Level Control Unit Design</title><link href="https://liu2z2.github.io/articles/20210426-gate-level-control-unit-design" rel="alternate"></link><published>2021-04-26T00:00:00-04:00</published><updated>2021-04-26T00:00:00-04:00</updated><author><name>Liu</name></author><id>tag:liu2z2.github.io,2021-04-26:/articles/20210426-gate-level-control-unit-design</id><summary type="html">
+&lt;p&gt;This article talks about the technical aspects and takeaway from two inter-connecting projects from Intro to Computer Architecture and Organization Class.
+The detail about the class is explained in my &lt;a href="../Discussion/spring-2021.md"&gt;Spring 2021 Remark&lt;/a&gt;.
+More info about the projects is available at my &lt;a href="https://github.com/liu2z2/class-files/tree/main/fall2021-comp-org"&gt;class-files repo&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id="non-pipelined-control-unit"&gt;Non-Pipelined Control Unit&lt;a class="headerlink" href="#non-pipelined-control-unit" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;A single-bus processing …&lt;/p&gt;</summary><content type="html">
+&lt;p&gt;This article talks about the technical aspects and takeaway from two inter-connecting projects from Intro to Computer Architecture and Organization Class.
+The detail about the class is explained in my &lt;a href="../Discussion/spring-2021.md"&gt;Spring 2021 Remark&lt;/a&gt;.
+More info about the projects is available at my &lt;a href="https://github.com/liu2z2/class-files/tree/main/fall2021-comp-org"&gt;class-files repo&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id="non-pipelined-control-unit"&gt;Non-Pipelined Control Unit&lt;a class="headerlink" href="#non-pipelined-control-unit" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;A single-bus processing unit was designed capable of executing a set of instructions specified as in Fig. 1.
+The design was implemented at the gate level. Some restrictions of the assignment include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Design should be restricted to single-bus paradigm. No point-to-point connections.&lt;/li&gt;
+&lt;li&gt;Read-only memory (ROM) may be used to contain up to 8 constants. Its design can be specified descriptively.&lt;/li&gt;
+&lt;li&gt;Main memory (MM) design can be specified descriptively and performs asynchronously&lt;/li&gt;
+&lt;li&gt;Gate level design must only use MUX, DEMUX, encoder, decoder, flip-flop and gates.&lt;/li&gt;
+&lt;li&gt;Detailed count-down timer design can be specified descriptively.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure&gt;
+&lt;img src="/images/project-control-unit/instr-table.png"/&gt;
+&lt;figcaption&gt; &lt;small&gt; Fig. 1: Instruction set &lt;/small&gt; &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h4 id="solution-brief"&gt;Solution Brief&lt;a class="headerlink" href="#solution-brief" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;We presented our design in a modular structure, which of which is used extensively by the CPU to meet the design requirements and achieve optimization.
+An abstract overview of the CPU is shown in Fig. 2.
+Data used in the instructions is pushed to a 16-bit bus as the only conveyance before being delivered to the intended locations.&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="/images/project-control-unit/data-path.png"/&gt;
+&lt;figcaption&gt; &lt;small&gt; Fig. 2: Abstract view of the data path &lt;/small&gt; &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;We started the Control Unit design by firstly defining the control signals needed in each instructions, during which we also discussed necessary changes and possible optimizations in the data path.
+The common fetch-decode-execute sequence was adopted as a general guideline.
+Afterwards, the control signals are collapsed into groups such that states can be determined, as well as the state transition.
+With the aforementioned state information narrowed down, the gate-level circuit was implemented as a Moore machine whose input is Opcode and various control flags from other components on the data bus, and whose output is to enable tri-state buffers on data paths.&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="/images/project-control-unit/state-trans.png"/&gt;
+&lt;figcaption&gt; &lt;small&gt; Fig. 3: State transition diagram &lt;/small&gt; &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+&lt;img src="/images/project-control-unit/control-unit.png"/&gt;
+&lt;figcaption&gt; &lt;small&gt; Fig. 4: Control unit block component view &lt;/small&gt; &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;Detail on other components is explained in the &lt;a href="https://github.com/liu2z2/class-files/tree/main/fall2021-comp-org/project-3-report.pdf"&gt;project report&lt;/a&gt;. Related optimizations include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We use Y and Z as pre- and post- buffer for the ALU operations, respectively, by statically writing in common register values.&lt;/li&gt;
+&lt;li&gt;Insead of sending six different control signals to dictate ALU functions for Opcode 0-5, whose operands are in similar format, the control unit commences a master signal which lets the ALU requests the Opcode directly to decide on the specific logical/arithmetic operations.&lt;/li&gt;
+&lt;li&gt;The ALU utilizes a carry lookahead adder-subtractor circuit in order to add or subtract two 16-bit values and output a single 16-bit value.
+  The carry lookahead generator, while it utilizes more gates than the
+  ripple-carry adder design, results in a significant decrease in propagation delay and performance time through the operations.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure&gt;
+&lt;img src="/images/project-control-unit/data-path-block.png"/&gt;
+&lt;figcaption&gt; &lt;small&gt; Fig 5: Data path block diagram &lt;/small&gt; &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h4 id="takeaway"&gt;Takeaway&lt;a class="headerlink" href="#takeaway" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;In this project, we went through the design and part of the implementation phase of a digital/register level project.
+We broke down the specification, explored possible solution, discussed possible optimization and eventually documented our solution within the time constraints.
+As a class assignment, we have scored the highest grade with a few points taken off due to formatting inconsistency.
+The project also gave us a chance to reflect on our understanding of the material, and luckily we were given enough time to clarify some questions over the discussion of the project.&lt;/p&gt;
+&lt;h3 id="pipelined-control-unit"&gt;Pipelined Control Unit&lt;a class="headerlink" href="#pipelined-control-unit" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;In this project, we were assigned to design a CPU with almost the same functionality, except the operation can be pipelined, and that the gate-level implementation is not required.
+Other limitations include I/O constraints, register space capacity, etc, are listed below.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;No hard restriction on data path, but all paths should be used reasonably.&lt;/li&gt;
+&lt;li&gt;Main memory (MM) has separate instruction and data ports that can be used simultaneously.&lt;/li&gt;
+&lt;li&gt;Register file (GPR) has 3 read ports and 2 write ports and all can be accessed simultaneously.&lt;/li&gt;
+&lt;li&gt;The pipeline should include at least three stages, corresponding to the fetch/decode/execute cycle.&lt;/li&gt;
+&lt;li&gt;Read-only memory (ROM) may be used to contain up to 8 constants.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="solution-brief_1"&gt;Solution Brief&lt;a class="headerlink" href="#solution-brief_1" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;As the functionality of this machine has many parts that overlap with the previous project, the detailed design and implementation were only briefly covered, whereas the pipeline is mainly discussed in the solution.&lt;/p&gt;
+&lt;p&gt;Our pipeline design consists of four unique stages: F1, F2, D1 and E1, matching the fetch/decode/execute cycle instruction cycle (Figure 6).
+Although some states share hardware resources, each has its own portion of the data path and dedicated portion of the control unit.
+By this design, each state only uses 1 clock cycle to finish, resulting in an ideal instruction completion time of 4 clock cycles - with a possible 4 instructions in the pipeline.
+Though it was hard to implement such system, this was a firm decision we made at the very beginning and we were determined to resolve the hazards from it.&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="/images/project-control-unit/pipeline-timing.png"/&gt;
+&lt;figcaption&gt; &lt;small&gt; Fig. 6: Four stage pipeline &lt;/small&gt; &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;Before we decipher the hazards individually, we designed a hardware queue system that dispatches instruction register (IR) and PC data to each stages, ensuring the correct flow of the pipeline.
+The implementation of the queuing on IR and PC is 16 stacks of 4-bit and 3-bit shift registers, respectively, shown in Fig. 7.
+The memory organization of them can be seen in Fig. 8, where each row is a shift register that can be controlled to shift, keep, or clear on each element, whereas a column represents a full IR/PC data.
+Additionally, by having a digitally controlled buffer from the clock to the RESET of the flip-flops, the register can also be cleared synchronously with the rest of the machine.&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="/images/project-control-unit/q-mem-org.png"/&gt;
+&lt;figcaption&gt; &lt;small&gt; Fig. 7: Memory organization of the queues &lt;/small&gt; &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
+&lt;img src="/images/project-control-unit/shift-reg.png"/&gt;
+&lt;figcaption&gt; &lt;small&gt; Fig. 8: Partial demonstration of shift register control &lt;/small&gt; &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;Thus, to reflect this queue transition, the control unit commences command for various event during runtime.
+The control unit on the top level is demonstrated in Fig. 9.&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="/images/project-control-unit/pipeline-control-unit.png"/&gt;
+&lt;figcaption&gt; &lt;small&gt; Fig. 9: Control unit top level design &lt;/small&gt; &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;The Stage Controller enables and disables the stages of the pipeline. The Queue Controller keeps the queue in synchronization with the stage behavior by moving forward the shift registers.
+At this level, the machine can be seen repeating on a normal state so long as there are no hazards or exceptions.
+In the event when they appear, the control unit enters states where it resolves the issue, then go back to looping state.
+These states are listed in Fig. 10, along with the GO state when the machine operates normally.
+The table also specifies whether to enable specific stages and the control over the queue, which will be justified in sections on hazards and exceptions.&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="/images/project-control-unit/pipeline-states.png"/&gt;
+&lt;figcaption&gt; &lt;small&gt; Fig. 10: States &lt;/small&gt; &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;Structural hazards, data hazards and control hazards are addressed separately.
+The main idea in our solution is stalling, or descriptively, prioritize execution (E1), and keep other stages from moving, until the hazard is unflagged.
+The analysis of each can be found in the project report.
+A summary is we exhaust all possible hazards, determined the true conditions, such that the implementation could be as simple as combinatorial gates.
+As for control hazards, we were well aware that a dynamic branch predictor is more popular and normally more efficient.
+However, since the data path design is determined before considering the control hazards, a limitation is placed to only update PC at execution (E1), making it ineffective even if the predictor predicts “taken”.
+Thus, it was decided to use a branch predictor that statically predicts “not taken”.&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="/images/project-control-unit/hazard-timing.png"/&gt;
+&lt;figcaption&gt; &lt;small&gt; Fig. 11: Hazard delay example &lt;/small&gt; &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h4 id="takeaway_1"&gt;Takeaway&lt;a class="headerlink" href="#takeaway_1" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Compared to the previous assignment, though not requiring a gate-level implementation, this project was more analytically challenging for us as it requires deeper and applicable understanding of pipeline design.
+Plus, we also decided on a even more ambitious goal of only allows one step in each stage.
+Luckily, with the collective effort of trials and errors, we were able to make sense of everything and deliver the project in time.&lt;/p&gt;
+&lt;p&gt;Continuing the project, though not required as an assignment, we hope with capable hardware such as FPGA, we could actually implement both machines to reality.&lt;/p&gt;</content><category term="Projects"></category><category term="project"></category><category term="hardware"></category><category term="class"></category></entry><entry><title>Art/Neuroscience Combined Honors Seminar Reflection</title><link href="https://liu2z2.github.io/articles/20200617-artneuroscience-combined-honors-seminar-reflection" rel="alternate"></link><published>2020-06-17T00:00:00-04:00</published><updated>2020-06-17T00:00:00-04:00</updated><author><name>Liu</name></author><id>tag:liu2z2.github.io,2020-06-17:/articles/20200617-artneuroscience-combined-honors-seminar-reflection</id><summary type="html">
 &lt;h3 id="class-description"&gt;Class Description&lt;a class="headerlink" href="#class-description" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;ARTE3041/NS3041: From Neurons to Picasso: How and Why the Brain Makes Art
 Offered in Spring Semester 2020
@@ -61,9 +185,9 @@ Instructed by Dr. Kris Holland and Dr. Ilya Vilinsky&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;As a learning experience, this project enhances my software programming skills, which I don’t usually learn from my EE curriculum. This was also my first time using SQL database, which I found is a useful tool with a steep learning curve. Finally, as of the closing phase, I came to realize that I did not know enough statistical and economical tools to understand the data comprehensively, and therefore I became interested and motivated to learn them along my study.&lt;/p&gt;</content><category term="Projects"></category><category term="UHP"></category></entry><entry><title>A Chiptune Music System with OPL2 and Reality Adlib Tracker</title><link href="https://liu2z2.github.io/articles/20191202-a-chiptune-music-system-with-opl2-and-reality-adlib-tracker" rel="alternate"></link><published>2019-12-02T00:00:00-05:00</published><updated>2019-12-02T00:00:00-05:00</updated><author><name>Liu</name></author><id>tag:liu2z2.github.io,2019-12-02:/articles/20191202-a-chiptune-music-system-with-opl2-and-reality-adlib-tracker</id><summary type="html">
-&lt;p&gt;The source of the project can be found &lt;a href="https://github.com/liu2z2/Chiptune"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;The objective of the project is to build a system with the old-school electronic components that plays Chiptune music, as well as composing the music with compatible software. This is a project for the class Japanese Music Online during Fall 2019 …&lt;/p&gt;</summary><content type="html">
-&lt;p&gt;The source of the project can be found &lt;a href="https://github.com/liu2z2/Chiptune"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The source of the project can be found at my GitHub &lt;a href="https://github.com/liu2z2/opl2-chiptune"&gt;repo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The objective of the project is to build a system with the old-school electronic components that plays Chiptune music, as well as composing the music with compatible software. This is a project for the class Japanese Music Online …&lt;/p&gt;</summary><content type="html">
+&lt;p&gt;The source of the project can be found at my GitHub &lt;a href="https://github.com/liu2z2/opl2-chiptune"&gt;repo&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The objective of the project is to build a system with the old-school electronic components that plays Chiptune music, as well as composing the music with compatible software. This is a project for the class Japanese Music Online during Fall 2019 semester.  Dr. Kazuaki Shiota was really nice to let me do this for the final project of the class. The project helped me understand the theory behind Chiptune Music from a musical and engineering standpoint. &lt;/p&gt;
 &lt;h3 id="how-chiptune-music-works"&gt;How Chiptune Music Works&lt;a class="headerlink" href="#how-chiptune-music-works" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;h4 id="beeper-speakers"&gt;Beeper Speakers&lt;a class="headerlink" href="#beeper-speakers" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h4&gt;
