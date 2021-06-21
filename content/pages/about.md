@@ -22,7 +22,7 @@ Status: hidden
 <img src="/images/about/pro-shot.JPG" width=40% style="float:right;padding: 10px 10px 10px 10px;">
 
 Electrical Engineering <br/>
-Bachelor of Science (May 2021) <br/>
+[Bachelor of Science (May 2021)](/docs/CeDiploma_BS_EE.pdf) <br/>
 Master of Science (May 2022) <br/><br/>
 University of Cincinnati, USA <br/>
 
@@ -30,12 +30,13 @@ University of Cincinnati, USA <br/>
 ​I am a multi-cultural learner who likes to apply my knowledge to incoming challenges. UC offers me a great opportunity with an outstanding EE curriculum and Co-op program. <br/><br/>
 
 
-I am currently seeking full-time position in two engineering fields
-
-- [Embedded Systems engineering](/extra/resume_hw.pdf) - design, prototype and implementation from hardware to software
-- [Intelligent Systems engineering](/extra/resume_sw.pdf) - AI-related engieering including data analysis, image processing, intelligent robotics, etc.
-
+I am currently seeking full-time position in two engineering fields.
 Click on the linked text to download the **resume** I prepared for the field.
+
+- [Embedded Systems engineering](/docs/resume_hw.pdf) - design, prototype and implementation from hardware to software
+- [Intelligent Systems engineering](/docs/resume_sw.pdf) - AI-related engieering including data analysis, image processing, intelligent robotics, etc.
+
+
 
 <!-- <iframe src = "/ViewerJS/#../extra/resume.pdf" height='300' allowfullscreen webkitallowfullscreen style="width:100%;"></iframe> -->
 
