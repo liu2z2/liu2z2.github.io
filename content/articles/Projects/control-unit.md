@@ -9,7 +9,7 @@ Tags: project, hardware, class
 
 This article talks about the technical aspects and takeaway from two inter-connecting projects from Intro to Computer Architecture and Organization Class.
 The detail about the class is explained in my [Spring 2021 Remark](../Discussion/spring-2021.md).
-More info about the projects is available at my [class-files repo](https://github.com/liu2z2/class-files/tree/main/fall2021-comp-org).
+More info about the projects is available at my [class-files repo](https://github.com/liu2z2/class-files/tree/main/spring2021-comp-org).
 
 ### Non-Pipelined Control Unit
 
