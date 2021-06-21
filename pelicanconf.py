@@ -15,6 +15,7 @@ PATH = 'content'
 PAGE_PATHS = ['pages']
 ARTICLE_PATHS = ['articles']
 STATIC_PATHS = ['images',
+                'docs',
                 'ViewerJS',
                 'extra',
                 ]

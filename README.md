@@ -2,7 +2,9 @@
 
 My personal ePortfolio and blog.
 - Powered by [Pelican](https://blog.getpelican.com/) - a static site generator written in Python
-- Using theme [Elegant](https://elegant.oncrashreboot.com/)
+- Using Pelican theme [Elegant](https://elegant.oncrashreboot.com/)
+- Using open-source privacy-focused analytics tool [Nulltics](https://nullitics.com/).
+- Using open-source PDF Viewer [ViewerJS](https://viewerjs.org/)
 
 ## Branches
 I am not an expert in web development so I used a static site generator in a language I am familiar with.
