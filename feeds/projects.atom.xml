@@ -5,12 +5,12 @@
 &lt;iframe id="lbry-iframe" width="560" height="315" src="https://odysee.com/$/embed/mgms/3dc55404ac7641b69029c516e8d3dc4355a71381?r=CSvAscaSzRs3YGifseotXHHmkb7njV6C" allowfullscreen&gt;&lt;/iframe&gt;</content><category term="Projects"></category><category term="project"></category></entry><entry><title>Gate-Level Control Unit Design</title><link href="https://liu2z2.github.io/articles/20210426-gate-level-control-unit-design" rel="alternate"></link><published>2021-04-26T00:00:00-04:00</published><updated>2021-04-26T00:00:00-04:00</updated><author><name>Liu</name></author><id>tag:liu2z2.github.io,2021-04-26:/articles/20210426-gate-level-control-unit-design</id><summary type="html">
 &lt;p&gt;This article talks about the technical aspects and takeaway from two inter-connecting projects from Intro to Computer Architecture and Organization Class.
 The detail about the class is explained in my &lt;a href="../Discussion/spring-2021.md"&gt;Spring 2021 Remark&lt;/a&gt;.
-More info about the projects is available at my &lt;a href="https://github.com/liu2z2/class-files/tree/main/fall2021-comp-org"&gt;class-files repo&lt;/a&gt;.&lt;/p&gt;
+More info about the projects is available at my &lt;a href="https://github.com/liu2z2/class-files/tree/main/spring2021-comp-org"&gt;class-files repo&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id="non-pipelined-control-unit"&gt;Non-Pipelined Control Unit&lt;a class="headerlink" href="#non-pipelined-control-unit" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;A single-bus processing …&lt;/p&gt;</summary><content type="html">
 &lt;p&gt;This article talks about the technical aspects and takeaway from two inter-connecting projects from Intro to Computer Architecture and Organization Class.
 The detail about the class is explained in my &lt;a href="../Discussion/spring-2021.md"&gt;Spring 2021 Remark&lt;/a&gt;.
-More info about the projects is available at my &lt;a href="https://github.com/liu2z2/class-files/tree/main/fall2021-comp-org"&gt;class-files repo&lt;/a&gt;.&lt;/p&gt;
+More info about the projects is available at my &lt;a href="https://github.com/liu2z2/class-files/tree/main/spring2021-comp-org"&gt;class-files repo&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id="non-pipelined-control-unit"&gt;Non-Pipelined Control Unit&lt;a class="headerlink" href="#non-pipelined-control-unit" title="Permanent link"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;A single-bus processing unit was designed capable of executing a set of instructions specified as in Fig. 1.
 The design was implemented at the gate level. Some restrictions of the assignment include:&lt;/p&gt;
