@@ -30,7 +30,7 @@ University of Cincinnati, USA <br/>
 ​I am a multi-cultural learner who likes to apply my knowledge to incoming challenges. UC offers me a great opportunity with an outstanding EE curriculum and Co-op program. <br/><br/>
 
 
-I am currently seeking full-time position in two engineering fields.
+I am currently working at [L&T Technology Service](https://www.ltts.com/) in Peoria, IL, but free to download my resume and contact me for future job opportunities.
 Click on the linked text to download the **resume** I prepared for the field.
 
 - [Embedded Systems engineering](/docs/resume_hw.pdf) - design, prototype and implementation from hardware to software
